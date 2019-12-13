@@ -11,6 +11,9 @@ public interface UserService {
 	public List<Map> getUserList(Map map);
 	public List<Map> getUserListParams(Map map);
 	public List<Map> getUserinfo(Map map);
+	
+	//获取fans的数据渲染tables
+	public List<Map> getfansinfo(Map map);
 
 
 }

@@ -17,6 +17,9 @@ public interface UserMapper {
 	
 	//获取information的数据渲染users.jsp
 	public List<Map> getUserinfo(Map map);
+	
+	//获取fans的数据渲染tables
+	public List<Map> getfansinfo(Map map);
 
 
 }

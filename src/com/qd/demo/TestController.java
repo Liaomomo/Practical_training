@@ -25,7 +25,7 @@ public class TestController {
 	
 	
 	
-	//����ͼ��ҳ��
+	//锟斤拷锟斤拷图锟斤拷页锟斤拷
 	@RequestMapping("/indexs")
 	public ModelAndView getindex(){
 		
@@ -54,33 +54,33 @@ public class TestController {
 	@RequestMapping("/getusers")
 	public ModelAndView getUserList()
 	{
-		System.out.println("�����̨��");
+		System.out.println("锟斤拷锟斤拷锟教拷锟�");
 		ModelAndView mv=new ModelAndView("/main.jsp");
 		List<Map> lm=userService.getUserList(null);
 		mv.addObject("userlist",lm);
-		mv.addObject("object","����");
+		mv.addObject("object","锟斤拷锟斤拷");
 		return mv;
 	}
 	
-	@RequestMapping("/getusersparam")     //����·��   
-	@ResponseBody    //����json��ʽ����
+	@RequestMapping("/getusersparam")     //锟斤拷锟斤拷路锟斤拷   
+	@ResponseBody    //锟斤拷锟斤拷json锟斤拷式锟斤拷锟斤拷
 	public List<Map> getUserListParam(@RequestBody Map parms)
 	{
-		System.out.println("��ʼ��ѯ���ݣ�"+parms); 	
+		System.out.println("锟斤拷始锟斤拷询锟斤拷锟捷ｏ拷"+parms); 	
 		List<Map> lm=userService.getUserListParams(parms); 	
-		return lm;   //��������
+		return lm;   //锟斤拷锟斤拷锟斤拷锟斤拷
 	}
 	
-	//�򵥶�̬���ݼ���
+	//锟津单讹拷态锟斤拷锟捷硷拷锟斤拷
 	@RequestMapping("/test")
     public ModelAndView testMVC() {
-        System.out.println("�����̨��");
+        System.out.println("锟斤拷锟斤拷锟教拷锟�");
         ModelAndView modelAndView = new ModelAndView("/index.jsp");
-        modelAndView.addObject("info", "����");
+        modelAndView.addObject("info", "锟斤拷锟斤拷");
         return modelAndView;
     }
 	
-	//����ͼ��ҳ��
+	//锟斤拷锟斤拷图锟斤拷页锟斤拷
 	@RequestMapping("/echart/getcharts")
 	public ModelAndView getEcharts(){
 		
@@ -89,11 +89,11 @@ public class TestController {
 		
 	}
 	
-	//ͼ��������Ⱦ
+	//图锟斤拷锟斤拷锟斤拷锟斤拷染
 	@RequestMapping("/getchartsdata")
 	@ResponseBody
 	public List getEchartsdata(){
-		System.out.println("����charts");
+		System.out.println("锟斤拷锟斤拷charts");
 		 HashMap data =new HashMap();
 //		 : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 //		 data: [120, 200, 150, 80, 70, 110, 130],
@@ -118,7 +118,7 @@ public class TestController {
 		
 	}
 	
-	//��ȡ���ݿ��analyze��user_information����
+	//锟斤拷取锟斤拷锟捷匡拷锟絘nalyze锟斤拷user_information锟斤拷锟斤拷
 	@Autowired
 	@RequestMapping("/get_userdata")
 	@ResponseBody
@@ -128,6 +128,15 @@ public class TestController {
 
 		return lm;
 		
+		
+	}
+	@RequestMapping("/get_fandata")
+	@ResponseBody
+	public List<Map> get_fandata(){
+		
+		List<Map> lm=userService.getfansinfo(null); 
+
+		return lm;
 		
 		
 	}

@@ -33,4 +33,9 @@ public class UserSeriviceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userMapper.getUserinfo(map);
 	}
+	//获取fans的数据渲染tables
+	public List<Map> getfansinfo(Map map) {
+		// TODO Auto-generated method stub
+		return userMapper.getfansinfo(map);
+	}
 }
