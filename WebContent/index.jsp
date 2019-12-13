@@ -84,35 +84,35 @@
 	     // 显示标题，图例和空的坐标轴
 			 myChart.setOption({
 			     title: {
-			         text: '异步数据加载示例'
+			         text: '粉丝人数排名'
 			     },
 			     tooltip: {},
 			     legend: {
-			         data:['销量']
+			         data:['人数']
 			     },
 			     xAxis: {
 			         data: []
 			     },
 			     yAxis: {},
 			     series: [{
-			         name: '销量',
+			         name: '人数',
 			         type: 'bar',
 			         data: []
 			     }]
 			 });
 			
 			 // 异步加载数据
-			 $.get('./getchartsdata.do').done(function (data) {
+			 $.get('./get_fandata.do').done(function (data) {
 				 var name=[];
 				 var keys=[]
-				 console.log(data)
-				 console.log(data[0])
 				 
-				for(var k in data[0]){
-					
-					name.push(k)
-					keys.push(data[0][k])
+				 
+				for(var k in data){
+					let d  = data[k]
+					name.push(d['user'])
+					keys.push(d['times'])
 				}
+				
 			     // 填入数据
 			     myChart.setOption({
 			         xAxis: {
@@ -120,7 +120,7 @@
 			         },
 			         series: [{
 			             // 根据名字对应到相应的系列
-			             name: '销量',
+			             name: '人数',
 			             data: keys
 			         }]
 			     });

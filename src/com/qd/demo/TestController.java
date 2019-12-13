@@ -23,7 +23,7 @@ public class TestController {
 	@Autowired
 	UserService userService;
 	
-	
+
 	
 	//锟斤拷锟斤拷图锟斤拷页锟斤拷
 	@RequestMapping("/indexs")

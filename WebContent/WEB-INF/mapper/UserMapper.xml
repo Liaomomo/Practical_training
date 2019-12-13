@@ -31,7 +31,7 @@
 </select>
 
 <select id="getfansinfo" resultType="java.util.HashMap" >
-	select * from fans limit 10 
+	select user,times from fans limit 6
 	<where> 
         <if test="name != null and name != ''">and name = #{name}</if>
       </where>
