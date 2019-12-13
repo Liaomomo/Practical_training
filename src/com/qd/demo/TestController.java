@@ -29,7 +29,7 @@ public class TestController {
 	@RequestMapping("/indexs")
 	public ModelAndView getindex(){
 		
-		ModelAndView model = new ModelAndView("/index.html");
+		ModelAndView model = new ModelAndView("/index.jsp");
 		return model;
 		
 	}
@@ -74,7 +74,7 @@ public class TestController {
 	}
 	
 	//图表数据渲染
-	@RequestMapping("/echart/getchartsdata")
+	@RequestMapping("/getchartsdata")
 	@ResponseBody
 	public List getEchartsdata(){
 		System.out.println("进入charts");

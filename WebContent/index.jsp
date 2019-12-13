@@ -1,34 +1,137 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>实训一</title>
-</head>
-<body>
-<h1>你好！实训一！</h1>
-Hello ${info} !!!!!
-<div>
-      <div><span>显示用户表</span></div>
-      <div>
-      <table>
-      <tr><td>姓名</td><td>性别</td><td>年龄 </td></tr>
-      <c:forEach items="${userlist}" var="s">
-    	<tr>
-        <td>${s.name }</td>
-        <td>${s.sex }</td>
-        <td>${s.age }</td>
-    	</tr>
-     </c:forEach> 
-</table> 
-</div> 
-</div>
+  <head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="./static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" type="text/css" href="./static/css/index.css"/>
+    <script src="./static/js/jquery.min.js"></script>
+    <script src="./static/js/echarts.js"></script>
+  </head>
+  <body>
+    <header class="header">   
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+          <div class="navbar-header">
+               <a href="index.html" class="navbar-brand">
+              <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">大数据</strong><strong>分析平台</strong></div>
+              </a>
+<!-- Sidebar Toggle Btn-->
+          </div>
+          <div class="right-menu list-inline no-margin-bottom">    
+           
+            <div ><a><img src="./static/img/flags/16/CN.png" alt="English"><span class="d-none d-sm-inline-block">中文</span></a>
+            </div>
 
-<a href="./echart/getcharts">打开图表</a>
+           
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+<!-- 侧边栏导航-->
+      <nav id="sidebar">
+<!-- 侧边栏标题-->
+        <div class="sidebar-header d-flex align-items-center">
+          
+          <div class="title">
+            <h1 class="h5">最刁实训组</h1>
+            <p>组长：廖海波</p>
+            <p>组员：<br>郭高勤、王嘉晨、张文昌、张锦辅</p>
+          </div>
+        </div>
+        <!-- 左边菜单栏--><span class="heading">菜单栏</span>
+        <ul class="list-unstyled">
+          <li class="active"><a href="index.html"> <i class="icon-home"></i>首页 </a></li>
+          <li><a href="tables.html"> <i class="icon-grid"></i>表格 </a></li>
+          <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>图表 </a></li>
 
-<a href="./get_userinfo">打开用户信息表</a>
+      </nav>
+<!-- Sidebar Navigation end-侧边栏导航结束-->
+      <div class="page-content">
+        <div class="page-header">
+          <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
+          </div>
+           <div class="container-charts"  id="echarts" style="background: white;">
+              
+           </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <script type="text/javascript">
+   $(function(){
+	   
+	   initEcharts();
+	   
+   })
+    
+   function initEcharts()
+   {
+	  
+	   var myChart = echarts.init(document.getElementById('echarts'));
+	     // 显示标题，图例和空的坐标轴
+			 myChart.setOption({
+			     title: {
+			         text: '异步数据加载示例'
+			     },
+			     tooltip: {},
+			     legend: {
+			         data:['销量']
+			     },
+			     xAxis: {
+			         data: []
+			     },
+			     yAxis: {},
+			     series: [{
+			         name: '销量',
+			         type: 'bar',
+			         data: []
+			     }]
+			 });
+			
+			 // 异步加载数据
+			 $.get('./getchartsdata.do').done(function (data) {
+				 var name=[];
+				 var keys=[]
+				 console.log(data)
+				 console.log(data[0])
+				 
+				for(var k in data[0]){
+					
+					name.push(k)
+					keys.push(data[0][k])
+				}
+			     // 填入数据
+			     myChart.setOption({
+			         xAxis: {
+			             data: name
+			         },
+			         series: [{
+			             // 根据名字对应到相应的系列
+			             name: '销量',
+			             data: keys
+			         }]
+			     });
+			 });
+	      
+	        myChart.setOption(option);
+   }
+    
 
-</body>
+ </script>
+  
+  </body>
+  
 </html>
