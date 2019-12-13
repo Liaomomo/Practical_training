@@ -12,26 +12,30 @@
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="./static/bootstrap/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="./static/css/style.default.css" id="theme-stylesheet">
-    <link rel="stylesheet" type="text/css" href="./static/css/index.css"/>
-    <script src="./static/js/jquery.min.js"></script>
-    <script src="./static/js/echarts.js"></script>
+   
   </head>
   <body>
     <header class="header">   
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex align-items-center justify-content-between">
           <div class="navbar-header">
-               <a href="index.html" class="navbar-brand">
+<!-- Navbar Header--><a href="index.html" class="navbar-brand">
               <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">大数据</strong><strong>分析平台</strong></div>
               </a>
 <!-- Sidebar Toggle Btn-->
           </div>
           <div class="right-menu list-inline no-margin-bottom">    
            
+<!-- Tasks-->
+<!-- Tasks end-->
+<!-- Megamenu-->
+<!-- Megamenu end     -->
+<!-- Languages dropdown-语言下拉    -->
             <div ><a><img src="./static/img/flags/16/CN.png" alt="English"><span class="d-none d-sm-inline-block">中文</span></a>
             </div>
-
+<!-- Log out               -->
            
           </div>
         </div>
@@ -51,9 +55,10 @@
         </div>
         <!-- 左边菜单栏--><span class="heading">菜单栏</span>
         <ul class="list-unstyled">
+          <li class="active">
           <li><a href="./indexs"> <i class="icon-home"></i>首页 </a></li>
-          <li><a href="./table"> <i class="icon-grid"></i>表格 </a></li>
-          <li class="active"><a href="./chart"> <i class="fa fa-bar-chart"></i>图表 </a></li>
+          <li class="active"><a href="./table"> <i class="icon-grid"></i>表格 </a></li>
+          <li><a href="./chart"> <i class="fa fa-bar-chart"></i>图表 </a></li>
 
       </nav>
 <!-- Sidebar Navigation end-侧边栏导航结束-->
@@ -62,76 +67,28 @@
           <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
           </div>
-           <div class="container-charts"  id="echarts" style="background: white;">
-              
-           </div>
         </div>
+<!-- 四张表中的第一张 -->
+            
+<!-- 人头像排名 -->
+ 
+<!-- 三张表左边的那张 -->
+       
+<!-- 文字列表 -->
+        
+<!-- 最下面的三个表 -->
+<!-- 第一个表的文字 -->
         
       </div>
     </div>
-    
-    <script type="text/javascript">
-   $(function(){
-	   
-	   initEcharts();
-	   
-   })
-    
-   function initEcharts()
-   {
-	  
-	   var myChart = echarts.init(document.getElementById('echarts'));
-	     // 显示标题，图例和空的坐标轴
-			 myChart.setOption({
-			     title: {
-			         text: '异步数据加载示例'
-			     },
-			     tooltip: {},
-			     legend: {
-			         data:['销量']
-			     },
-			     xAxis: {
-			         data: []
-			     },
-			     yAxis: {},
-			     series: [{
-			         name: '销量',
-			         type: 'bar',
-			         data: []
-			     }]
-			 });
-			
-			 // 异步加载数据
-			 $.get('./getchartsdata.do').done(function (data) {
-				 var name=[];
-				 var keys=[]
-				 console.log(data)
-				 console.log(data[0])
-				 
-				for(var k in data[0]){
-					
-					name.push(k)
-					keys.push(data[0][k])
-				}
-			     // 填入数据
-			     myChart.setOption({
-			         xAxis: {
-			             data: name
-			         },
-			         series: [{
-			             // 根据名字对应到相应的系列
-			             name: '销量',
-			             data: keys
-			         }]
-			     });
-			 });
-	      
-	        myChart.setOption(option);
-   }
-    
-
- </script>
-  
+    <!-- JavaScript files-->
+<!--     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script> -->
+<!--     <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
+ <!--    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script> -->
+<!--     <script src="vendor/chart.js/Chart.min.js"></script> -->
+<!--     <script src="vendor/jquery-validation/jquery.validate.min.js"></script> -->
+<!--     <script src="js/charts-home.js"></script> -->
+<!--     <script src="js/front.js"></script> -->
   </body>
-  
 </html>

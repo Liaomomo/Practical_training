@@ -51,9 +51,9 @@
         </div>
         <!-- 左边菜单栏--><span class="heading">菜单栏</span>
         <ul class="list-unstyled">
-          <li class="active"><a href="index.html"> <i class="icon-home"></i>首页 </a></li>
-          <li><a href="tables.html"> <i class="icon-grid"></i>表格 </a></li>
-          <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>图表 </a></li>
+          <li class="active"><a href="index.jsp"> <i class="icon-home"></i>首页 </a></li>
+          <li><a href="./table"> <i class="icon-grid"></i>表格 </a></li>
+          <li><a href="./chart"> <i class="fa fa-bar-chart"></i>图表 </a></li>
 
       </nav>
 <!-- Sidebar Navigation end-侧边栏导航结束-->

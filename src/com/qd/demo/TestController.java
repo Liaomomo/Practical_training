@@ -25,11 +25,27 @@ public class TestController {
 	
 	
 	
-	//ÇëÇóÍ¼±íÒ³Ãæ
+	//ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Ò³ï¿½ï¿½
 	@RequestMapping("/indexs")
 	public ModelAndView getindex(){
 		
 		ModelAndView model = new ModelAndView("/index.jsp");
+		return model;
+		
+	}
+
+	@RequestMapping("/chart")
+	public ModelAndView getchart(){
+		
+		ModelAndView model = new ModelAndView("/chart.jsp");
+		return model;
+		
+	}
+	
+	@RequestMapping("/table")
+	public ModelAndView gettable(){
+		
+		ModelAndView model = new ModelAndView("/table.jsp");
 		return model;
 		
 	}
@@ -38,33 +54,33 @@ public class TestController {
 	@RequestMapping("/getusers")
 	public ModelAndView getUserList()
 	{
-		System.out.println("½øÈëºóÌ¨£¡");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨ï¿½ï¿½");
 		ModelAndView mv=new ModelAndView("/main.jsp");
 		List<Map> lm=userService.getUserList(null);
 		mv.addObject("userlist",lm);
-		mv.addObject("object","ÕÅÈý");
+		mv.addObject("object","ï¿½ï¿½ï¿½ï¿½");
 		return mv;
 	}
 	
-	@RequestMapping("/getusersparam")     //·ÃÎÊÂ·¾¶   
-	@ResponseBody    //·µ»Øjson¸ñÊ½Êý¾Ý
+	@RequestMapping("/getusersparam")     //ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½   
+	@ResponseBody    //ï¿½ï¿½ï¿½ï¿½jsonï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½
 	public List<Map> getUserListParam(@RequestBody Map parms)
 	{
-		System.out.println("¿ªÊ¼²éÑ¯Êý¾Ý£¡"+parms); 	
+		System.out.println("ï¿½ï¿½Ê¼ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ý£ï¿½"+parms); 	
 		List<Map> lm=userService.getUserListParams(parms); 	
-		return lm;   //·µ»ØÊý¾Ý
+		return lm;   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//¼òµ¥¶¯Ì¬Êý¾Ý¼ÓÔØ
+	//ï¿½òµ¥¶ï¿½Ì¬ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½ï¿½
 	@RequestMapping("/test")
     public ModelAndView testMVC() {
-        System.out.println("½øÈëºóÌ¨£¡");
+        System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨ï¿½ï¿½");
         ModelAndView modelAndView = new ModelAndView("/index.jsp");
-        modelAndView.addObject("info", "ÕÅÈý");
+        modelAndView.addObject("info", "ï¿½ï¿½ï¿½ï¿½");
         return modelAndView;
     }
 	
-	//ÇëÇóÍ¼±íÒ³Ãæ
+	//ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Ò³ï¿½ï¿½
 	@RequestMapping("/echart/getcharts")
 	public ModelAndView getEcharts(){
 		
@@ -73,11 +89,11 @@ public class TestController {
 		
 	}
 	
-	//Í¼±íÊý¾ÝäÖÈ¾
+	//Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¾
 	@RequestMapping("/getchartsdata")
 	@ResponseBody
 	public List getEchartsdata(){
-		System.out.println("½øÈëcharts");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½charts");
 		 HashMap data =new HashMap();
 //		 : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 //		 data: [120, 200, 150, 80, 70, 110, 130],
@@ -102,7 +118,7 @@ public class TestController {
 		
 	}
 	
-	//»ñÈ¡Êý¾Ý¿âµÄanalyzeµÄuser_informationÊý¾Ý
+	//ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½analyzeï¿½ï¿½user_informationï¿½ï¿½ï¿½ï¿½
 	@Autowired
 	@RequestMapping("/get_userdata")
 	@ResponseBody
