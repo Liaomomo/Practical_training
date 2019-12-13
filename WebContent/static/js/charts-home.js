@@ -93,100 +93,121 @@ $(document).ready(function () {
     });
 
 
-
     // ------------------------------------------------------- //
     // 首页中间左边上面的的表
     // ------------------------------------------------------ //
-    var BARCHARTEXMPLE    = $('#barChartExample1');
-    var barChartExample = new Chart(BARCHARTEXMPLE, {
-        type: 'bar',
-        options: {
-            scales: {
-                xAxes: [{
-                    display: false,
-                    gridLines: {
-                        color: '#eee'
-                    }
-                }],
-                yAxes: [{
-                    display: false,
-                    gridLines: {
-                        color: '#eee'
-                    }
-                }]
-            },
-        },
-        data: {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
-                {
-                    label: "首页中间左边上面的的表",
-                    backgroundColor: [
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)"
-                    ],
-                    hoverBackgroundColor: [
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)",
-                        "rgba(134, 77, 217, 0.57)"
-                    ],
-                    borderColor: [
-                        "rgba(134, 77, 217, 1)",
-                        "rgba(134, 77, 217, 1)",
-                        "rgba(134, 77, 217, 1)",
-                        "rgba(134, 77, 217, 1)",
-                        "rgba(134, 77, 217, 1)",
-                        "rgba(134, 77, 217, 1)",
-                        "rgba(134, 77, 217, 1)"
-                    ],
-                    borderWidth: 1,
-                    data: [65, 59, 80, 81, 56, 55, 40],
-                },
-                {
-                    label: "数据表 2",
-                    backgroundColor: [
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)"
-                    ],
-                    hoverBackgroundColor: [
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)"
-                    ],
-                    borderColor: [
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)",
-                        "rgba(75, 75, 75, 0.7)"
-                    ],
-                    borderWidth: 1,
-                    data: [35, 40, 60, 47, 88, 27, 30],
-                }
-            ]
-        }
-    });
-
+//    var BARCHARTEXMPLE    = ;
+    var myChart = echarts.init($('#barChartExample1'));
+    // 显示标题，图例和空的坐标轴
+		 myChart.setOption({
+		     title: {
+		         text: '异步数据加载示例'
+		     },
+		     tooltip: {},
+		     legend: {
+		         data:['销量']
+		     },
+		     xAxis: {
+		         data: []
+		     },
+		     yAxis: {},
+		     series: [{
+		         name: '销量',
+		         type: 'bar',
+		         data: []
+		     }]
+		 });
+		
+		 // 异步加载数据
+		 $.get('../echart/getchartsdata.do').done(function (data) {
+			 var name=[];
+			 var keys=[]
+			 console.log(data)
+			 console.log(data[0])
+			 
+			for(var k in data[0]){
+				
+				name.push(k)
+				keys.push(data[0][k])
+			}
+		     // 填入数据
+		     myChart.setOption({
+		         xAxis: {
+		             data: name
+		         },
+		         series: [{
+		             // 根据名字对应到相应的系列
+		             name: '销量',
+		             data: keys
+		         }]
+		     });
+		 });
+     
+       myChart.setOption(option);
+   
+    
+    
+    
+    
+    
+    
+//    var barChartExample = new Chart(BARCHARTEXMPLE, {
+//        type: 'bar',
+//        options: {
+//            scales: {
+//                xAxes: [{
+//                    display: false,
+//                    gridLines: {
+//                        color: '#eee'
+//                    }
+//                }],
+//                yAxes: [{
+//                    display: false,
+//                    gridLines: {
+//                        color: '#eee'
+//                    }
+//                }]
+//            },
+//        },
+//        data: {
+//            labels: ["January", "February", "March", "April", "May", "June", "July"],
+//            datasets: [
+//                {
+//                    label: "首页中间左边上面的的表",
+//                    backgroundColor: [
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)"
+//                    ],
+//                    hoverBackgroundColor: [
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)",
+//                        "rgba(134, 77, 217, 0.57)"
+//                    ],
+//                    borderColor: [
+//                        "rgba(134, 77, 217, 1)",
+//                        "rgba(134, 77, 217, 1)",
+//                        "rgba(134, 77, 217, 1)",
+//                        "rgba(134, 77, 217, 1)",
+//                        "rgba(134, 77, 217, 1)",
+//                        "rgba(134, 77, 217, 1)",
+//                        "rgba(134, 77, 217, 1)"
+//                    ],
+//                    borderWidth: 1,
+//                    data: [65, 59, 80, 81, 56, 55, 40],
+//                }
+//            ]
+//        }
+//    });
+//
 
     // ------------------------------------------------------- //
     // 首页最右下面的表

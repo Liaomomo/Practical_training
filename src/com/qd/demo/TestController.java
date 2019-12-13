@@ -23,6 +23,18 @@ public class TestController {
 	@Autowired
 	UserService userService;
 	
+	
+	
+	//«Î«ÛÕº±Ì“≥√Ê
+	@RequestMapping("/indexs")
+	public ModelAndView getindex(){
+		
+		ModelAndView model = new ModelAndView("/index.html");
+		return model;
+		
+	}
+	
+	
 	@RequestMapping("/getusers")
 	public ModelAndView getUserList()
 	{
