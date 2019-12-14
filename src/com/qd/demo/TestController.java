@@ -50,6 +50,63 @@ public class TestController {
 		
 	}
 	
+	@RequestMapping("/chart_1")
+	public ModelAndView getchart_1(){
+		
+		ModelAndView model = new ModelAndView("/chart_1.jsp");
+		return model;
+		
+	}
+	
+	@RequestMapping("/chart_2")
+	public ModelAndView getchart_2(){
+		
+		ModelAndView model = new ModelAndView("/chart_2.jsp");
+		return model;
+		
+	}
+	
+	@RequestMapping("/chart_3")
+	public ModelAndView getchart_3(){
+		
+		ModelAndView model = new ModelAndView("/chart_3.jsp");
+		return model;
+		
+	}
+	
+	@RequestMapping("/chart_4")
+	public ModelAndView getchart_4(){
+		
+		ModelAndView model = new ModelAndView("/chart_4.jsp");
+		return model;
+		
+	}
+	
+	@RequestMapping("/chart_5")
+	public ModelAndView getchart_5(){
+		
+		ModelAndView model = new ModelAndView("/chart_5.jsp");
+		return model;
+		
+	}
+	
+	@RequestMapping("/chart_6")
+	public ModelAndView getchart_6(){
+		
+		ModelAndView model = new ModelAndView("/chart_6.jsp");
+		return model;
+		
+	}
+	
+	@RequestMapping("/chart_7")
+	public ModelAndView getchart_7(){
+		
+		ModelAndView model = new ModelAndView("/chart_7.jsp");
+		return model;
+	}
+		
+
+	
 	
 	@RequestMapping("/getusers")
 	public ModelAndView getUserList()
