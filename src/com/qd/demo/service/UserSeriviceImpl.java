@@ -38,4 +38,44 @@ public class UserSeriviceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userMapper.getfansinfo(map);
 	}
+
+	public List<Map> getchart_0_data(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Map> getchart_1_data(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Map> getchart_2_data(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Map> getchart_3_data(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Map> getchart_4_data(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Map> getchart_5_data(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Map> getchart_6_data(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Map> getchart_7_data(Map map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

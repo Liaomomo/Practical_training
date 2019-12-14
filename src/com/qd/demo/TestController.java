@@ -23,33 +23,27 @@ public class TestController {
 	@Autowired
 	UserService userService;
 	
-
 	
-	//锟斤拷锟斤拷图锟斤拷页锟斤拷
-	@RequestMapping("/indexs")
+	
+	//知乎粉丝最多的100位大V index.jsp        one
+	@RequestMapping("/chart_0")
 	public ModelAndView getindex(){
 		
-		ModelAndView model = new ModelAndView("/index.jsp");
+		ModelAndView model = new ModelAndView("/chart_0.jsp");
 		return model;
 		
 	}
+	//知乎粉丝最多的100位大V数据                         one_data
+	@RequestMapping("/chart_0_data")
+	@ResponseBody
+	public List<Map > chart_0_data(){
+	
+		return null;
+	}
+	
+	
 
-	@RequestMapping("/chart")
-	public ModelAndView getchart(){
-		
-		ModelAndView model = new ModelAndView("/chart.jsp");
-		return model;
-		
-	}
-	
-	@RequestMapping("/table")
-	public ModelAndView gettable(){
-		
-		ModelAndView model = new ModelAndView("/table.jsp");
-		return model;
-		
-	}
-	
+	//知乎回答问题最多的100位用户 
 	@RequestMapping("/chart_1")
 	public ModelAndView getchart_1(){
 		
@@ -57,7 +51,18 @@ public class TestController {
 		return model;
 		
 	}
+	//知乎回答问题最多的100位用户数据
+	@RequestMapping("/chart_1_data")
+	@ResponseBody
+	public List<Map > chart_1_data(){
+		
+			return null;
+		}
+		
+		
+		
 	
+	//知乎用户就业方向
 	@RequestMapping("/chart_2")
 	public ModelAndView getchart_2(){
 		
@@ -65,7 +70,18 @@ public class TestController {
 		return model;
 		
 	}
+	//知乎用户就业方向 数据
+	@RequestMapping("/chart_2_data")
+	@ResponseBody
+	public List<Map > chart_2_data(){
+		
+		return null;
+	}
 	
+	
+	
+	
+	//知乎问题导向功能
 	@RequestMapping("/chart_3")
 	public ModelAndView getchart_3(){
 		
@@ -74,6 +90,17 @@ public class TestController {
 		
 	}
 	
+	//知乎问题导向功能 数据
+	@RequestMapping("/chart_3_data")
+	@ResponseBody
+	public List<Map > chart_3_data(){
+			
+			return null;
+	}
+	
+	
+	
+	//知乎僵尸粉统计功能
 	@RequestMapping("/chart_4")
 	public ModelAndView getchart_4(){
 		
@@ -81,7 +108,16 @@ public class TestController {
 		return model;
 		
 	}
+	//知乎僵尸粉统计功能 数据
+	@RequestMapping("/chart_4_data")
+	@ResponseBody
+	public List<Map > chart_4_data(){
+				
+			return null;
+	}
 	
+	
+	//知乎的高校用户
 	@RequestMapping("/chart_5")
 	public ModelAndView getchart_5(){
 		
@@ -89,7 +125,17 @@ public class TestController {
 		return model;
 		
 	}
+	//知乎的高校用户 数据
+	@RequestMapping("/chart_5_data")
+	@ResponseBody
+	public List<Map > chart_5_data(){
+					
+				return null;
+	}
 	
+	
+	
+	//用户兴趣画像功能
 	@RequestMapping("/chart_6")
 	public ModelAndView getchart_6(){
 		
@@ -97,15 +143,35 @@ public class TestController {
 		return model;
 		
 	}
+	//知乎的高校用户 数据
+	@RequestMapping("/chart_6_data")
+	@ResponseBody
+	public List<Map > chart_6_data(){
+						
+		return null;
+	}
 	
+	
+	
+	//pageRank用户排行
 	@RequestMapping("/chart_7")
 	public ModelAndView getchart_7(){
 		
 		ModelAndView model = new ModelAndView("/chart_7.jsp");
 		return model;
 	}
+	
+	//pageRank用户排行 数据
+	@RequestMapping("/chart_7_data")
+	@ResponseBody
+	public List<Map > chart_7_data(){
+						
+		return null;
+	}
 		
 
+	
+	
 	
 	
 	@RequestMapping("/getusers")

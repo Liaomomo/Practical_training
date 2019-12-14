@@ -14,6 +14,18 @@ public interface UserService {
 	
 	//获取fans的数据渲染tables
 	public List<Map> getfansinfo(Map map);
+	
+	
+	
+	//图表的八个接口
+	public List<Map> getchart_0_data(Map map);
+	public List<Map> getchart_1_data(Map map);
+	public List<Map> getchart_2_data(Map map);
+	public List<Map> getchart_3_data(Map map);
+	public List<Map> getchart_4_data(Map map);
+	public List<Map> getchart_5_data(Map map);
+	public List<Map> getchart_6_data(Map map);
+	public List<Map> getchart_7_data(Map map);
 
 
 }
