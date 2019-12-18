@@ -4,40 +4,9 @@
 <mapper namespace="com.qd.demo.mapper.UserMapper">
 
 <select id="getUserList" resultType="java.util.HashMap" >
-	select * from student 
+	select * from user 
 	<where> 
         <if test="name != null and name != ''">and name = #{name}</if>
-      </where>
+    </where>
 </select>
-
-
-
-<select id="getUserListParams" resultType="java.util.HashMap" >
-	select * from student 
-	<where> 
-        <if test="name != null and name != ''">
-	and name like CONCAT('%','${name}','%')</if>
-        </where>
-</select>
-
-
-
-
-<select id="getUserinfo" resultType="java.util.HashMap" >
-	select * from user_information limit 20 
-	<where> 
-        <if test="name != null and name != ''">and name = #{name}</if>
-      </where>
-</select>
-
-<select id="getfansinfo" resultType="java.util.HashMap" >
-	select user,times from fans limit 6
-	<where> 
-        <if test="name != null and name != ''">and name = #{name}</if>
-      </where>
-</select>
-
-
-
-
 </mapper>

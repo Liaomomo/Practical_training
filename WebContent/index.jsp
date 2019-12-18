@@ -115,8 +115,8 @@
 				 
 				for(var k in data){
 					let d  = data[k]
-					name.push(d['benotice_user'])
-					keys.push(d['benotice_count'])
+					name.push(d['user'])
+					keys.push(d['times'])
 				}
 				
 			     // 填入数据

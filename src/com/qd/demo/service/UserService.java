@@ -1,4 +1,4 @@
-package com.qd.demo.Service;
+package com.qd.demo.service;
 
 
 import java.util.List;

@@ -11,11 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="./static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./static/css/style.default.css" id="theme-stylesheet">
-    <link rel="stylesheet" type="text/css" href="./static/css/index.css"/>
-    <script src="./static/js/jquery.min.js"></script>
-    <script src="./static/js/echarts.js"></script>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/echarts.js"></script>
   </head>
   <body>
     <header class="header">   
@@ -29,7 +29,7 @@
           </div>
           <div class="right-menu list-inline no-margin-bottom">    
            
-            <div ><a><img src="./static/img/flags/16/CN.png" alt="English"><span class="d-none d-sm-inline-block">中文</span></a>
+            <div ><a><img src="../static/img/flags/16/CN.png" alt="English"><span class="d-none d-sm-inline-block">中文</span></a>
             </div>
 
            
@@ -51,14 +51,14 @@
         </div>
         <!-- 左边菜单栏--><span class="heading">菜单栏</span>
         <ul class="list-unstyled">
-         <li class="active"><a href="./chart_0"> <i class="icon-home"></i>首页 </a></li>
-          <li><a href="./chart_1"> <i class="fa fa-bar-chart"></i>chart1 </a></li>
-          <li><a href="./chart_2"> <i class="fa fa-bar-chart"></i>chart2 </a></li>
-          <li><a href="./chart_3"> <i class="fa fa-bar-chart"></i>chart3 </a></li>
-          <li><a href="./chart_4"> <i class="fa fa-bar-chart"></i>chart4 </a></li>
-          <li><a href="./chart_5"> <i class="fa fa-bar-chart"></i>chart5 </a></li>
-          <li><a href="./chart_6"> <i class="fa fa-bar-chart"></i>chart6 </a></li>
-          <li><a href="./chart_7"> <i class="fa fa-bar-chart"></i>chart7 </a></li>
+         <li><a href="../page/chart_0.do"> <i class="icon-home"></i>首页 </a></li>
+          <li class="active"><a href="../page/chart_1.do"> <i class="fa fa-bar-chart"></i>chart1 </a></li>
+          <li><a href="../page/chart_2.do"> <i class="fa fa-bar-chart"></i>chart2 </a></li>
+          <li><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>chart3 </a></li>
+          <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>chart4 </a></li>
+          <li><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>chart5 </a></li>
+          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>chart6 </a></li>
+          <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>chart7 </a></li>
           
 
       </nav>
@@ -108,7 +108,7 @@
 			 });
 			
 			 // 异步加载数据
-			 $.get('./get_fandata.do').done(function (data) {
+			 $.get('../user/getAnswerQuestionNumUser.do').done(function (data) {
 				 var name=[];
 				 var keys=[]
 				 
@@ -131,8 +131,7 @@
 			         }]
 			     });
 			 });
-	      
-	        myChart.setOption(option);
+
    }
     
 

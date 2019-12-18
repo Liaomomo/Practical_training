@@ -1,4 +1,4 @@
-package com.qd.demo.Service.Impl;
+package com.qd.demo.service.Impl;
 
 import java.util.List;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.qd.demo.Service.UserQuestionService;
+import com.qd.demo.service.UserQuestionService;
 import com.qd.demo.mapper.UserQuestionMapper;
 
 @Service
