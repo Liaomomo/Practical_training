@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+$(function(){
+	$("#go").click(function(){
+		<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -68,7 +70,7 @@
           <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
             <div>
-                <li  class="active" style="list-style: none; display: inline-block;margin-right: 50px;"><a href="./chart_2_1.do"> <i class="fa fa-bar-chart" ></i>chart2 </a></li>
+                <li  class="active" style="list-style: none; display: inline-block;margin-right: 50px;"><a href="../page/chart_2.do"> <i class="fa fa-bar-chart" ></i>chart2 </a></li>
                 <li style="list-style: none;display: inline-block;margin-right: 50px;"><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>chart3 </a></li>
           		<li style="list-style: none;display: inline-block;"><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>chart4 </a></li>
             </div>
@@ -107,7 +109,7 @@
 			     yAxis: {},
 			     series: [{
 			         name: '人数',
-			         type: 'bar',
+			         type: 'line',
 			         data: []
 			     }]
 			 });
@@ -145,3 +147,7 @@
   </body>
   
 </html>
+
+
+	})
+}

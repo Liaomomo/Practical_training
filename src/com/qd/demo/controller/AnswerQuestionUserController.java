@@ -30,9 +30,10 @@ public class AnswerQuestionUserController {
 	@RequestMapping("/getUserJobLocation")
 	@ResponseBody
 	public List<Map > getUserJobLocation(){
-		
+		System.out.println(userService.getUserJobLocation());
 		return userService.getUserJobLocation();
 	}
+	
 
 	
 	

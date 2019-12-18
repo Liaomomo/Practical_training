@@ -1,6 +1,8 @@
 package com.qd.demo.controller;
 
 import org.springframework.stereotype.Controller;
+
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 @Controller
@@ -84,6 +86,15 @@ public class PageController {
 		return model;
 		
 	}
+	//chart_2_1
+		@RequestMapping("/chart_2_1")
+		public ModelAndView getchart_2_1(){
+			
+			ModelAndView model = new ModelAndView("/chart_2_1.jsp");
+			return model;
+			
+		}
+		
 	
 
 

@@ -68,7 +68,7 @@
           <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
             <div>
-                <li  class="active" style="list-style: none; display: inline-block;margin-right: 50px;"><a href="./chart_2_1.do"> <i class="fa fa-bar-chart" ></i>chart2 </a></li>
+                <li  class="active" style="list-style: none; display: inline-block;margin-right: 50px;"><a href="../page/chart_2.do"> <i class="fa fa-bar-chart" ></i>chart2 </a></li>
                 <li style="list-style: none;display: inline-block;margin-right: 50px;"><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>chart3 </a></li>
           		<li style="list-style: none;display: inline-block;"><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>chart4 </a></li>
             </div>
@@ -94,23 +94,20 @@
 	   var myChart = echarts.init(document.getElementById('echarts'));
 	     // 显示标题，图例和空的坐标轴
 			 myChart.setOption({
-			     title: {
-			         text: '职业分布'
-			     },
-			     tooltip: {},
-			     legend: {
-			         data:['人数']
-			     },
-			     xAxis: {
-			         data: []
-			     },
-			     yAxis: {},
-			     series: [{
-			         name: '人数',
-			         type: 'bar',
-			         data: []
-			     }]
+				 xAxis: {
+				        type: 'category',
+				        data:[]
+				    },
+				    yAxis: {
+				        type: 'value'
+				    },
+				    series: [{
+				        data:[],
+				        type: 'line'
+				    }]
+			    
 			 });
+			
 			
 			 // 异步加载数据
 			 $.get('../user/getUserJobLocation.do').done(function (data) {
