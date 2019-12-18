@@ -4,6 +4,6 @@
 <mapper namespace="com.qd.demo.mapper.FansNumUserMapper">
 
 <select id="getMostFansNumUser" resultType="java.util.HashMap" >
-       SELECT * FROM fans   LIMIT 10
+       SELECT * FROM benotice_num ORDER BY benotice_count DESC  LIMIT 50
 </select>
 </mapper>
