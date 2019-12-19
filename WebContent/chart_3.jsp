@@ -66,7 +66,7 @@
               <h2 class="h5 no-margin-bottom">饼图</h2>
             </a>
           </div>
-           <div class="container-charts"  id="echarts" style="background: white;">
+           <div class="container-charts"  id="echarts" style="background: white; padding-top:2%">
               
            </div>
         </div>
@@ -75,7 +75,8 @@
     </div>
     
     <script type="text/javascript">
-   $(function(){
+ 
+$(function(){
 	   
 	   initEcharts();
 	   
@@ -86,50 +87,72 @@
 	  
 	   var myChart = echarts.init(document.getElementById('echarts'));
 	     // 显示标题，图例和空的坐标轴
+	    
 			 myChart.setOption({
-			     title: {
-			         text: '粉丝人数排名'
-			     },
-			     tooltip: {},
-			     legend: {
-			         data:['人数']
-			     },
-			     xAxis: {
-			         data: []
-			     },
-			     yAxis: {},
-			     series: [{
-			         name: '人数',
-			         type: 'bar',
-			         data: []
-			     }]
+				 title : {
+				        text: '最热话题',
+				        x:'center'
+				    },
+				    tooltip : {
+				    	trigger: 'item',
+				        formatter: "{a} <br/>{b} : {c} ({d}%)"
+				    },
+				    legend: {
+				    	orient: 'vertical',
+				        left: 'left',
+				        data: []
+				    },
+				    series : [
+				        {
+				            
+				            type: 'pie',
+				            radius : '55%',
+				            center: ['50%', '60%'],
+				            data:[
+				                
+				            ],
+				            itemStyle: {
+				                emphasis: {
+				                    shadowBlur: 10,
+				                    shadowOffsetX: 0,
+				                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+				                }
+				            }
+				         
+				        }
+				    ]
 			 });
 			
 			 // 异步加载数据
-			 $.get('../user/getDiePowderUser.do').done(function (data) {
+			 $.get('../userQuestion/getUserQuestion.do').done(function (data) {
 				 var name=[];
-				 var keys=[]
+				 var keys=[];
+				 datas={};
+				 console.log(data)
+				
 				 
 				 
 				for(var k in data){
 					let d  = data[k]
-					name.push(d['user'])
-					keys.push(d['times'])
+					name.push(d['name'])
+					keys.push(d['value'])
+					
+					
 				}
+				
+				 
 				
 			     // 填入数据
 			     myChart.setOption({
-			         xAxis: {
-			             data: name
-			         },
+			    	 
+			         
 			         series: [{
 			             // 根据名字对应到相应的系列
-			             name: '人数',
-			             data: keys
+			             name: '',
+			             data: data
 			         }]
 			     });
 			 });
-	      
 
    }
     
