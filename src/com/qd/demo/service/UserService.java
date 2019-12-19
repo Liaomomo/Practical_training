@@ -12,9 +12,13 @@ public interface UserService {
 	public List<Map> getAnswerQuestionNumUser();
 
 	public List<Map> getUserJobLocation();
+	
+	public List<Map> getUserJobLocation2_2();
 
 
 	public List<Map> getDiePowderUser();
+	
+	
 
 
 }

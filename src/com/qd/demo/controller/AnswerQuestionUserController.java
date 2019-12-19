@@ -26,13 +26,23 @@ public class AnswerQuestionUserController {
 	}
 	
 
+	
 	//知乎用户职业分布  
 	@RequestMapping("/getUserJobLocation")
 	@ResponseBody
 	public List<Map > getUserJobLocation(){
-		System.out.println(userService.getUserJobLocation());
+		
 		return userService.getUserJobLocation();
 	}
+	
+	//知乎用户职业分布  
+		@RequestMapping("/getUserJobLocation2_2")
+		@ResponseBody
+		public List<Map > getUserJobLocation2_2(){
+			System.out.println(userService.getUserJobLocation());
+			
+			return userService.getUserJobLocation2_2();
+		}
 	
 
 	

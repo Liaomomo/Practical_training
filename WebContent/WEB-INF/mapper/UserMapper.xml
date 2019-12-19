@@ -10,9 +10,19 @@
 <select id="getAnswerQuestionNumUser" resultType="java.util.HashMap" >
 
 </select>
-
+<!-- 
 <select id="getUserJobLocation" resultType="java.util.HashMap" >
     select business,count(*) totalNum from user_all where business != 'NULL' group by business order by totalNum desc limit 10
+</select>
+
+ -->
+ <select id="getUserJobLocation" resultType="java.util.HashMap" >
+    select business,count(*) totalNum from user_all where business != 'NULL' group by business order by totalNum desc limit 10
+</select>
+
+
+<select id="getUserJobLocation2_2" resultType="java.util.HashMap" >
+    select  count(*) as value, business as name  from user_all where business != 'NULL' group by business order by value desc limit 10
 </select>
 
 <select id="getDiePowderUser" resultType="java.util.HashMap" >

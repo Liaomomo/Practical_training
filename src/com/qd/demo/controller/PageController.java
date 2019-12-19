@@ -93,7 +93,17 @@ public class PageController {
 			ModelAndView model = new ModelAndView("/chart_2_1.jsp");
 			return model;
 			
-		}
+	}
+	//chart_2_2
+		@RequestMapping("/chart_2_2")
+		public ModelAndView getchart_2_2(){
+			
+			ModelAndView model = new ModelAndView("/chart_2_2.jsp");
+			return model;
+			
+	}
+		
+    
 		
 	
 

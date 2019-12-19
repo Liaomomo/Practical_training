@@ -30,4 +30,9 @@ public class UserServiceImpl implements UserService {
 			// TODO Auto-generated method stub
 			return userMapper.getDiePowderUser();
 		}
+
+		public List<Map> getUserJobLocation2_2() {
+			// TODO Auto-generated method stub
+			return userMapper.getUserJobLocation2_2();
+		}
 }

@@ -69,7 +69,7 @@
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
             <div>
                 <li  class="active" style="list-style: none; display: inline-block;margin-right: 50px;"><a href="./chart_2_1.do"> <i class="fa fa-bar-chart" ></i>chart2 </a></li>
-                <li style="list-style: none;display: inline-block;margin-right: 50px;"><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>chart3 </a></li>
+                <li style="list-style: none;display: inline-block;margin-right: 50px;"><a href="./chart_2_2.do"> <i class="fa fa-bar-chart"></i>chart3 </a></li>
           		<li style="list-style: none;display: inline-block;"><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>chart4 </a></li>
             </div>
           </div>

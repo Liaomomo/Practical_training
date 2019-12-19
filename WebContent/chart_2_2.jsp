@@ -1,6 +1,4 @@
-$(function(){
-	$("#go").click(function(){
-		<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -70,8 +68,8 @@ $(function(){
           <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
             <div>
-                <li  class="active" style="list-style: none; display: inline-block;margin-right: 50px;"><a href="../page/chart_2.do"> <i class="fa fa-bar-chart" ></i>chart2 </a></li>
-                <li style="list-style: none;display: inline-block;margin-right: 50px;"><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>chart3 </a></li>
+                <li  class="active" style="list-style: none; display: inline-block;margin-right: 50px;"><a href="./chart_2_1.do"> <i class="fa fa-bar-chart" ></i>chart2 </a></li>
+                <li style="list-style: none;display: inline-block;margin-right: 50px;"><a href="./chart_2_2.do"> <i class="fa fa-bar-chart"></i>chart3 </a></li>
           		<li style="list-style: none;display: inline-block;"><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>chart4 </a></li>
             </div>
           </div>
@@ -95,46 +93,72 @@ $(function(){
 	  
 	   var myChart = echarts.init(document.getElementById('echarts'));
 	     // 显示标题，图例和空的坐标轴
+	    
 			 myChart.setOption({
-			     title: {
-			         text: '职业分布'
-			     },
-			     tooltip: {},
-			     legend: {
-			         data:['人数']
-			     },
-			     xAxis: {
-			         data: []
-			     },
-			     yAxis: {},
-			     series: [{
-			         name: '人数',
-			         type: 'line',
-			         data: []
-			     }]
+				 title : {
+				        text: '职业分布',
+				        x:'center'
+				    },
+				    tooltip : {
+				    	trigger: 'item',
+				        formatter: "{a} <br/>{b} : {c} ({d}%)"
+				    },
+				    legend: {
+				    	orient: 'vertical',
+				        left: 'left',
+				        data: []
+				    },
+				    series : [
+				        {
+				            
+				            type: 'pie',
+				            radius : '55%',
+				            center: ['50%', '60%'],
+				            data:[
+				                
+				            ],
+				            itemStyle: {
+				                emphasis: {
+				                    shadowBlur: 10,
+				                    shadowOffsetX: 0,
+				                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+				                }
+				            }
+				         
+				        }
+				    ]
 			 });
 			
 			 // 异步加载数据
-			 $.get('../user/getUserJobLocation.do').done(function (data) {
+			 $.get('../user/getUserJobLocation2_2.do').done(function (data) {
 				 var name=[];
-				 var keys=[]
+				 var keys=[];
+				 datas={};
+				 console.log(data)
+				
 				 
 				 
 				for(var k in data){
 					let d  = data[k]
-					name.push(d['business'])
-					keys.push(d['totalNum'])
+					name.push(d['name'])
+					keys.push(d['value'])
+					
+					
 				}
+				
+				 
 				
 			     // 填入数据
 			     myChart.setOption({
-			         xAxis: {
-			             data: name
-			         },
+			    	 legend: {
+					        
+					        data: name
+					    },
+			         
 			         series: [{
 			             // 根据名字对应到相应的系列
-			             name: '人数',
-			             data: keys
+			             name: '',
+			             data: data
 			         }]
 			     });
 			 });
@@ -147,7 +171,3 @@ $(function(){
   </body>
   
 </html>
-
-
-	})
-}
