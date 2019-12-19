@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qd.demo.mapper.UserMapper">
+<mapper namespace="com.qd.demo.mapper.CollegeUserInfoMapper">
 
 <select id="getCollegeStudentsUserNum" resultType="java.util.HashMap" >
-	     select count(*)  as value,education as name from user_all where education != 'NULL' group by education order by value desc   
+	   select count(*)  as value,education as name from user_all where  education like "%大学" and  education != '大学'       group by education order by value desc limit 15;
+
 </select>
 
 <select id="getCollegeUserSexRatio" resultType="java.util.HashMap" >

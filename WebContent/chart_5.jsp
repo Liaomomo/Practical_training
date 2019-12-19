@@ -80,23 +80,27 @@
 	   var myChart = echarts.init(document.getElementById('echarts'));
 	     // 显示标题，图例和空的坐标轴
 			 myChart.setOption({
-			     title: {
-			         text: '粉丝人数排名'
-			     },
-			     tooltip: {},
-			     legend: {
-			         data:['人数']
-			     },
-			     xAxis: {
-			         data: []
-			     },
-			     yAxis: {},
-			     series: [{
-			         name: '人数',
-			         type: 'bar',
-			         data: []
-			     }]
-			 });
+				 tooltip:{
+					 show:true
+					 },
+					 legend:{
+					 data:['登录人数']
+					 },
+					 xAxis:[{
+					 type:'category',
+					 data:[]//名称
+					 }],
+					 yAxis:[{
+					 type:'value'
+
+					 }],
+					 series:[{
+					 'name':'登录人数',
+					 'type':'bar',
+					 'data':[]//数量
+					 }]
+					 
+			 }); 
 			
 			 // 异步加载数据
 			 $.get('../student/getCollegeUserNum.do').done(function (data) {
@@ -106,15 +110,23 @@
 				 
 				for(var k in data){
 					let d  = data[k]
-					name.push(d['user'])
-					keys.push(d['times'])
+					name.push(d['name'])
+					keys.push(d['value'])
 				}
 				
 			     // 填入数据
 			     myChart.setOption({
 			         xAxis: {
-			             data: name
+			             data: name,
+			             axisLabel:{  
+	                         interval:0,//横轴信息全部显示  
+	                         rotate:-20,//-30度角倾斜显示  
+				        }
+			             
 			         },
+			         grid:{
+					    	y2:140
+					    },
 			         series: [{
 			             // 根据名字对应到相应的系列
 			             name: '人数',
