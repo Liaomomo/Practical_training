@@ -88,23 +88,39 @@
 	  
 	   var myChart = echarts.init(document.getElementById('echarts'));
 	     // 显示标题，图例和空的坐标轴
-			 myChart.setOption({
-			     title: {
-			         text: '粉丝人数排名'
-			     },
-			     tooltip: {},
-			     legend: {
-			         data:['人数']
-			     },
-			     xAxis: {
-			         data: []
-			     },
-			     yAxis: {},
-			     series: [{
-			         name: '人数',
-			         type: 'bar',
-			         data: []
-			     }]
+			myChart.setOption({
+				 title : {
+				        text: '职业分布',
+				        x:'center'
+				    },
+				    tooltip : {
+				    	trigger: 'item',
+				        formatter: "{a} <br/>{b} : {c} ({d}%)"
+				    },
+				    legend: {
+				    	orient: 'vertical',
+				        left: 'left',
+				        data: []
+				    },
+				    series : [
+				        {
+				            
+				            type: 'pie',
+				            radius : '55%',
+				            center: ['50%', '60%'],
+				            data:[
+				                
+				            ],
+				            itemStyle: {
+				                emphasis: {
+				                    shadowBlur: 10,
+				                    shadowOffsetX: 0,
+				                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+				                }
+				            }
+				         
+				        }
+				    ]
 			 });
 			
 			 // 异步加载数据
@@ -119,6 +135,10 @@
 					keys.push(d['times'])
 				}
 				
+				 
+				 
+				 
+				 
 			     // 填入数据
 			     myChart.setOption({
 			         xAxis: {

@@ -4,10 +4,10 @@
 <mapper namespace="com.qd.demo.mapper.UserMapper">
 
 <select id="getCollegeStudentsUserNum" resultType="java.util.HashMap" >
-	
+	     select count(*)  as value,education as name from user_all where education != 'NULL' group by education order by value desc   
 </select>
 
 <select id="getCollegeUserSexRatio" resultType="java.util.HashMap" >
-	
+	  
 </select>
 </mapper>
