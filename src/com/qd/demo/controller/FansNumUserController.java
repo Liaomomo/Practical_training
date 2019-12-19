@@ -27,6 +27,7 @@ public class FansNumUserController {
 	public List<Map > chart_0_data(){
 		
 		List<Map> list = fansNumUserService.getMostFansNumUser();
+		
 		System.out.println(list);
 	
 		return list;

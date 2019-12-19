@@ -41,14 +41,7 @@
 <!-- 侧边栏导航-->
       <nav id="sidebar">
 <!-- 侧边栏标题-->
-        <div class="sidebar-header d-flex align-items-center">
-          
-          <div class="title">
-            <h1 class="h5">最刁实训组</h1>
-            <p>组长：廖海波</p>
-            <p>组员：<br>郭高勤、王嘉晨、张文昌、张锦辅</p>
-          </div>
-        </div>
+        
         <!-- 左边菜单栏--><span class="heading">菜单栏</span>
         <ul class="list-unstyled">
            <li><a href="../page/chart_0.do"> <i class="icon-home"></i>首页 </a></li>

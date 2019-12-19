@@ -41,29 +41,22 @@
 <!-- 侧边栏导航-->
       <nav id="sidebar">
 <!-- 侧边栏标题-->
-        <div class="sidebar-header d-flex align-items-center">
-          
-          <div class="title">
-            <h1 class="h5">最刁实训组</h1>
-            <p>组长：廖海波</p>
-            <p>组员：<br>郭高勤、王嘉晨、张文昌、张锦辅</p>
-          </div>
-        </div>
+        
         <!-- 左边菜单栏--><span class="heading">菜单栏</span>
         <ul class="list-unstyled">
-         <li><a href="../page/chart_0.do"> <i class="icon-home"></i>首页 </a></li>
-          <li><a href="../page/chart_1.do"> <i class="fa fa-bar-chart"></i>chart1 </a></li>
-          <li><a href="../page/chart_2.do"> <i class="fa fa-bar-chart"></i>chart2 </a></li>
-          <li  class="active"><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>知乎影响力话题 </a></li>
-          <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>chart4 </a></li>
-          <li><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>chart5 </a></li>
-          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>chart6 </a></li>
+          <li class=><a href="../page/chart_0.do" > <i class="icon-home"></i >粉丝大V </a></li>
+          <li><a href="../page/chart_1.do"> <i class="fa fa-bar-chart"></i>最佳活跃人 </a></li>
+          <li><a href="../page/chart_2.do"> <i class="fa fa-bar-chart"></i>知乎职业分布</a></li>
+          <li class="active"><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>最热话题 </a></li>
+          <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>知乎僵尸粉 </a></li>
+          <li><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>高校用户分布 </a></li>
+          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>用户兴趣画像 </a></li>
           <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>chart7 </a></li>
           
 
       </nav>
 <!-- Sidebar Navigation end-侧边栏导航结束-->
-      <div class="page-content">
+      <div class="page-contents">
         <div class="page-header">
           <div class="container-fluid" style="display: inline">
             <a href="../page/chart_3.do" >

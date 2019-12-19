@@ -219,7 +219,7 @@ pre {
   min-height: 100vh;
   width: calc(100% - 280px);
   padding: 0;
-  padding-bottom: 70px;
+  padding-bottom: 0px;
 }
 
 .page-content.active {
@@ -227,10 +227,10 @@ pre {
 }
 
 .page-header {
-  padding: 20px 15px;
+  padding: 10px 15px;
   background: #2d3035;
   color: #8a8d93;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 .footer {
@@ -718,9 +718,9 @@ nav.navbar .dropdown .dropdown-menu.active {
 * ==========================================================
 */
 nav#sidebar {
-  width: 280px;
+  width:18%;
   background: #2d3035;
-  color: #6a6c70;
+  color: #c0c0c0;
   border-right: 1px solid #34373d;
   /* shrinked navbar */
 }
@@ -775,10 +775,12 @@ nav#sidebar .sidebar-header p {
 }
 
 nav#sidebar span.heading {
+	
   font-weight: 700;
   margin-left: 20px;
-  color: #494d53;
+  /*color: #494d53;*/
   font-size: 1.2rem;
+  margin-left:20%;
   margin-bottom: 15px;
 }
 

@@ -14,7 +14,11 @@
     <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../static/css/style.default.css" id="theme-stylesheet">
     <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
-
+     <style type="text/css">
+        
+		
+          
+     </style>
   </head>
   <body>
     <header class="header">   
@@ -24,7 +28,7 @@
                <a href="index.html" class="navbar-brand">
               <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">大数据</strong><strong>分析平台</strong></div>
               </a>
-<!-- Sidebar Toggle Btn-->
+
           </div>
           <div class="right-menu list-inline no-margin-bottom">    
            
@@ -35,44 +39,42 @@
         </div>
       </nav>
     </header>
+    
+    
     <div class="d-flex align-items-stretch">
 <!-- 侧边栏导航-->
       <nav id="sidebar">
-<!-- 侧边栏标题-->
-        <div class="sidebar-header d-flex align-items-center">
-          
-          <div class="title">
-            <h1 class="h5">最刁实训组</h1>
-            <p>组长：廖海波</p>
-            <p>组员：<br>郭高勤、王嘉晨、张文昌、张锦辅</p>
-          </div>
-        </div>
-        <!-- 左边菜单栏--><span class="heading">菜单栏</span>
+
+        
+        <span class="heading">菜单栏</span>
         <ul class="list-unstyled">
-          <li class="active"><a href="../page/chart_0.do"> <i class="icon-home"></i>首页 </a></li>
-          <li><a href="../page/chart_1.do"> <i class="fa fa-bar-chart"></i>chart1 </a></li>
-          <li><a href="../page/chart_2.do"> <i class="fa fa-bar-chart"></i>chart2 </a></li>
-          <li><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>chart3 </a></li>
-          <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>chart4 </a></li>
-          <li><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>chart5 </a></li>
-          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>chart6 </a></li>
+          <li class="active"><a href="../page/chart_0.do" > <i class="icon-home"></i >粉丝大V </a></li>
+          <li ><a href="../page/chart_1.do"> <i class="fa fa-bar-chart"></i>最佳活跃人 </a></li>
+          <li><a href="../page/chart_2.do"> <i class="fa fa-bar-chart"></i>知乎职业分布</a></li>
+          <li><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>最热话题 </a></li>
+          <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>知乎僵尸粉 </a></li>
+          <li><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>高校用户分布 </a></li>
+          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>用户兴趣画像 </a></li>
           <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>chart7 </a></li>
           </ul>
 
       </nav>
 <!-- Sidebar Navigation end-侧边栏导航结束-->
-      <div class="page-content">
+      <div class="page-contents" >
         <div class="page-header">
           <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
           </div>
-           <div class="container-charts"  id="echarts" style="background: white;">
-              
+           <div class="container-charts"  id="echarts" style="background: rgb(255,255,255);">
+              <img  alt=""  id="fan_img" src="../static/img/fans_wordcloud_1219.jpg" width="90%" height="440px">
            </div>
         </div>
         
       </div>
     </div>
+    
+    
+    
     <script type="text/javascript" src="../static/js/jquery.min.js"></script>
     <script type="text/javascript" src="../static/js/echarts.js"></script>
     <script type="text/javascript">
@@ -85,7 +87,7 @@
    function initEcharts()
    {
 	  
-	   var myChart = echarts.init(document.getElementById('echarts'));
+	   //var myChart = echarts.init(document.getElementById('echarts'));
 	     // 显示标题，图例和空的坐标轴
 			 myChart.setOption({
 			     title: {
@@ -107,30 +109,7 @@
 			 });
 			
 			 // 异步加载数据
-			 $.get('../fans/getMostFansNumUser.do').done(function (data) {
-				 
-				 var name=[];
-				 var keys=[]
-				 console.log(data)
-				 
-				for(var k in data){
-					let d  = data[k]
-					name.push(d['benotice_user'])
-					keys.push(d['benotice_count'])
-				}
-				
-			     // 填入数据
-			     myChart.setOption({
-			         xAxis: {
-			             data: name
-			         },
-			         series: [{
-			             // 根据名字对应到相应的系列
-			             name: '人数',
-			             data: keys
-			         }]
-			     });
-			 });
+			 
 	      
    }
     

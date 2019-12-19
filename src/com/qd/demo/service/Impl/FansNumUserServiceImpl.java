@@ -14,10 +14,11 @@ public class FansNumUserServiceImpl implements FansNumUserService{
 	
 	@Autowired
 	private FansNumUserMapper fansNumUserMapper;
-
 	public List<Map> getMostFansNumUser() {
 		// TODO Auto-generated method stub
 		return fansNumUserMapper.getMostFansNumUser();
 	}
+	
+	
 
 }

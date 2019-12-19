@@ -12,7 +12,7 @@ public class PageController {
 	//
 	@RequestMapping("/chart_0")
 	public ModelAndView getindex(){
-		System.out.println("-----------1");
+		
 		ModelAndView mv = new ModelAndView("/chart_0.jsp");
 		return mv;
 		
