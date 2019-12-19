@@ -8,6 +8,16 @@
 </select>
 
 <select id="getCollegeUserSexRatio" resultType="java.util.HashMap" >
-	  
+	  select *from
+(
+	select education,
+	sum(case when sex='male' then 1 else 0 end) as male,
+	sum(case when sex='female' then 1 else 0 end) as female,
+	sum(case when (sex='male') or (sex='female') then 1 else 0 end) as total
+	from user_all
+	group by education
+)as a
+where education != 'NULL' and education  like '%大学' and education != '大学'
+order by total desc;
 </select>
 </mapper>

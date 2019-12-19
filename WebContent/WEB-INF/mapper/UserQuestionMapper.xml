@@ -3,8 +3,10 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qd.demo.mapper.UserMapper">
 
+<!--最有影响力话题  -->
 <select id="getUserQuestion" resultType="java.util.HashMap" >
-
+   select question_title ,hot_degrss from hot_quet_pro
+     
 </select>
 
 <select id="getUserInterest" resultType="java.util.HashMap" >
