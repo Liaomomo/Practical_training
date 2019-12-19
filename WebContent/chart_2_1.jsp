@@ -89,7 +89,14 @@
 			 myChart.setOption({
 				 xAxis: {
 				        type: 'category',
-				        data:[]
+				        data:[],
+				        axisLabel:{  
+	                         interval:0,//横轴信息全部显示  
+	                         rotate:-20,//-30度角倾斜显示  
+				        }
+				    },
+				    grid:{
+				    	y2:140
 				    },
 				    yAxis: {
 				        type: 'value'
@@ -113,6 +120,7 @@
 					name.push(d['business'])
 					keys.push(d['totalNum'])
 				}
+				 console.log(name);
 				
 			     // 填入数据
 			     myChart.setOption({

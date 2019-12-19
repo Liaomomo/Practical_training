@@ -62,7 +62,8 @@
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
           </div>
            <div class="container-charts"  id="echarts" style="background: white;">
-              
+              <img  alt=""  id="fan_img" src="../static/img/answers_300_wordcloud_1219.jpg" width="90%" height="440px">
+           
            </div>
         </div>
         
@@ -72,7 +73,7 @@
     <script type="text/javascript">
    $(function(){
 	   
-	   initEcharts();
+	   <!--  initEcharts();-->
 	   
    })
     
