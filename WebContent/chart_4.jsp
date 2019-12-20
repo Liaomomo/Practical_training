@@ -51,7 +51,7 @@
           <li class="active"><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>知乎僵尸粉 </a></li>
           <li><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>高校用户分布 </a></li>
           <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>用户兴趣画像 </a></li>
-          <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>chart7 </a></li>
+          <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>PageRank用户排行 </a></li>
           
 
       </nav>
@@ -60,6 +60,11 @@
         <div class="page-header">
           <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
+            <div>
+                <li  class="active" style="list-style: none; display: inline-block;margin-right: 60px;"><a href="../page/chart_4.do" style="text-decoration: none;"> <i class="fa fa-bar-chart" ></i>柱状图 </a></li>
+                <li style="list-style: none;display: inline-block;margin-right: 60px;"><a href="./chart_4.do" style="text-decoration: none;"> <i class="fa fa-bar-chart"></i></a></li>
+          		
+            </div>
           </div>
            <div class="container-charts"  id="echarts" style="background: white;">
               

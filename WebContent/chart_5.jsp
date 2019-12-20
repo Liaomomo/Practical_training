@@ -16,8 +16,9 @@
     <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/echarts.js"></script>
+   
   </head>
-  <body>
+  <body style="word-spacing:-4px;">
     <header class="header">   
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid d-flex align-items-center justify-content-between">
@@ -50,18 +51,22 @@
           <li><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>最热话题 </a></li>
           <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>知乎僵尸粉 </a></li>
           <li class="active"><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>高校用户分布 </a></li>
-          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>用户兴趣画像 </a></li>
-          <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>chart7 </a></li>
+          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>	用户兴趣画像 </a></li>
+          <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>PageRank用户排行</a></li>
       </nav>
 <!-- Sidebar Navigation end-侧边栏导航结束-->
       <div class="page-contents">
         <div class="page-header">
           <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
-          </div>
-           <div class="container-charts"  id="echarts" style="background: white;">
-              
-           </div>
+            <div>
+                <li  class="active" style="list-style: none; display: inline-block;margin-right: 60px;"><a href="../page/chart_5.do" style="text-decoration: none;"> <i class="fa fa-bar-chart" ></i>柱状图 </a></li>
+                <li style="list-style: none;display: inline-block;margin-right: 60px;"><a href="./chart_5.do" style="text-decoration: none;"> <i class="fa fa-bar-chart"></i></a></li>
+          		
+            </div>
+          </div >
+           <div class="container-charts"  id="echarts" style="background: white;display: inline-block;white;width: 700px;height:500px;"></div>
+           <div class="container-charts"  id="echarts2" style="background: white;display: inline-block;white;width: 330px;height:500px;"></div>
         </div>
         
       </div>
@@ -77,9 +82,13 @@
    function initEcharts()
    {
 	  
-	   var myChart = echarts.init(document.getElementById('echarts'));
+	   var myChart1 = echarts.init(document.getElementById('echarts'));
 	     // 显示标题，图例和空的坐标轴
-			 myChart.setOption({
+			 myChart1.setOption({
+				 title : {
+				        text: '高校分布',
+				        x:'center'
+				    },
 				 tooltip:{
 					 show:true
 					 },
@@ -100,7 +109,44 @@
 					 'data':[]//数量
 					 }]
 					 
-			 }); 
+			 });
+			 var myChart2 = echarts.init(document.getElementById('echarts2'));
+			 myChart2.setOption({
+				 title : {
+				        
+				    },
+				    tooltip : {
+				    	trigger: 'item',
+				        formatter: "{a} <br/>{b} : {c} ({d}%)"
+				    },
+				    legend: {
+				    	
+				        left: 'left',
+				        data: []
+				    },
+				    series : [
+				        {
+				            
+				            type: 'pie',
+				            radius : '45%',
+				            center: ['53%', '50%'],
+				            data:[
+				                
+				            ],
+				            itemStyle: {
+				                emphasis: {
+				                    shadowBlur: 10,
+				                    shadowOffsetX: 0,
+				                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+				                }
+				            }
+				         
+				        }
+				    ]
+					 
+			 });
+
+
 			
 			 // 异步加载数据
 			 $.get('../student/getCollegeUserNum.do').done(function (data) {
@@ -115,7 +161,7 @@
 				}
 				
 			     // 填入数据
-			     myChart.setOption({
+			     myChart1.setOption({
 			         xAxis: {
 			             data: name,
 			             axisLabel:{  
@@ -133,7 +179,23 @@
 			             data: keys
 			         }]
 			     });
-			 });
+			 
+             // 填入数据
+		     myChart2.setOption({
+		    	 legend: {
+				        
+				        //data: name
+				    },
+		         
+		         series: [{
+		             // 根据名字对应到相应的系列
+		             name: '',
+		             data: data
+		         }]
+		     });
+             
+		});
+		echarts.connect([myChart1,myChart2]);
 
    }
     

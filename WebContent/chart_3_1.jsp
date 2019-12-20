@@ -51,7 +51,7 @@
           <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>知乎僵尸粉 </a></li>
           <li><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>高校用户分布 </a></li>
           <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>用户兴趣画像 </a></li>
-          <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>chart7 </a></li>
+          <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>PageRank用户排行 </a></li>
           
 
       </nav>
@@ -59,12 +59,13 @@
       <div class="page-contents">
         <div class="page-header">
           <div class="container-fluid" style="display: inline">
-            <a href="../page/chart_3.do" >
-              <h2 class="h5 no-margin-bottom">折线图</h2>
-            </a>
-            <a href="../page/chart_3_1.do">
-              <h2 class="h5 no-margin-bottom">饼图</h2>
-            </a>
+          <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
+            <div>
+                <li  class="active" style="list-style: none; display: inline-block;margin-right: 60px;"><a href="../page/chart_3.do" style="text-decoration: none;"> <i class="fa fa-bar-chart" ></i>折线图 </a></li>
+                
+          		
+            </div>
+
           </div>
            <div class="container-charts"  id="echarts" style="background: white;">
               

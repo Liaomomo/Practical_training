@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/tx 
-	http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+        http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
     <!-- 1.配置数据源 -->
     <bean name="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <!-- 四要素：驱动、连接地址(备用：172.19.128.202)、账号、密码-->
