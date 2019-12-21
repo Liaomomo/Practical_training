@@ -67,6 +67,14 @@ public class PageController {
 		return model;
 		
 	}
+	//chart_5_1
+		@RequestMapping("/chart_5_1")
+		public ModelAndView getchart_5_1(){
+			
+			ModelAndView model = new ModelAndView("/chart_5_1.jsp");
+			return model;
+			
+		}
 	
 	
 	//知乎问题导向功能
@@ -102,6 +110,14 @@ public class PageController {
 			return model;
 			
 	}
+	//chart_2_3
+		@RequestMapping("/chart_2_3")
+		public ModelAndView getchart_2_3(){
+				
+			ModelAndView model = new ModelAndView("/chart_2_3.jsp");
+			return model;
+					
+		}	
 		
     
 		

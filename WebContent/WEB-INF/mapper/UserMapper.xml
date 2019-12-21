@@ -20,6 +20,10 @@
     select  count(*) as value, business as name  from user_all where business != 'NULL' group by business order by value desc limit 10
 </select>
 
+<select id="getUserlocationMap" resultType="java.util.HashMap" >
+select count(*) as value,locaton as name from user_all where locaton != 'NULL'  group by name  order by value desc	   
+</select>
+
 <select id="getDiePowderUser" resultType="java.util.HashMap" >
 
 </select>

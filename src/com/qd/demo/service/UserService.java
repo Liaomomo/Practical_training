@@ -17,6 +17,8 @@ public interface UserService {
 
 
 	public List<Map> getDiePowderUser();
+
+	public List<Map> getUserlocationMap();
 	
 	
 

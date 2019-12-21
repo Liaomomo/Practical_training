@@ -44,6 +44,14 @@ public class AnswerQuestionUserController {
 			return userService.getUserJobLocation2_2();
 		}
 	
+		//知乎用户的地区分布
+		@RequestMapping("/getUserlocationMap")
+		@ResponseBody
+		public List<Map >getUserlocationMap(){
+						
+			return userService.getUserlocationMap();
+		}
+	
 
 	
 	

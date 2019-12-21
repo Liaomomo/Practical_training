@@ -19,6 +19,8 @@
 	group by education
 )as a
 where education != 'NULL' and education  like '%大学' and education != '大学'
-order by total desc;
+order by total desc LIMIT 15;
 </select>
+
+
 </mapper>

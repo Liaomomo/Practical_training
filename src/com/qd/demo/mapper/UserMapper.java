@@ -18,5 +18,8 @@ public List<Map> getDiePowderUser();
 
 public List<Map> getUserJobLocation2_2();
 
+
+public List<Map> getUserlocationMap();
+
 }
 

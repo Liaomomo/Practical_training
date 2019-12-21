@@ -65,8 +65,7 @@
           		
             </div>
           </div >
-           <div class="container-charts"  id="echarts" style="background: white;display: inline-block;white;width: 700px;height:500px;"></div>
-           <div class="container-charts"  id="echarts2" style="background: white;display: inline-block;white;width: 330px;height:500px;"></div>
+          <div class="container-charts"  id="echarts" style="background: white;">
         </div>
         
       </div>
@@ -82,88 +81,106 @@
    function initEcharts()
    {
 	  
-	   var myChart1 = echarts.init(document.getElementById('echarts'));
+	   var myChart = echarts.init(document.getElementById('echarts'));
+	   var colors = ['#5793f3', '#d14a61', '#675bba'];
 	     // 显示标题，图例和空的坐标轴
-			 myChart1.setOption({
-				 title : {
-				        text: '高校分布',
-				        x:'center'
-				    },
-				 tooltip:{
-					 show:true
-					 },
-					 legend:{
-					 data:['登录人数']
-					 },
-					 xAxis:[{
-					 type:'category',
-					 data:[]//名称
-					 }],
-					 yAxis:[{
-					 type:'value'
+			 myChart.setOption({
+				 color: colors,
 
-					 }],
-					 series:[{
-					 'name':'登录人数',
-					 'type':'bar',
-					 'data':[]//数量
-					 }]
-					 
-			 });
-			 var myChart2 = echarts.init(document.getElementById('echarts2'));
-			 myChart2.setOption({
-				 title : {
+				    tooltip: {
+				        
+				        axisPointer: {
+				            type: 'cross'
+				        }
+				    },
+				    grid: {
 				        
 				    },
-				    tooltip : {
-				    	trigger: 'item',
-				        formatter: "{a} <br/>{b} : {c} ({d}%)"
+				    toolbox: {
+				        feature: {
+				            dataView: {show: true, readOnly: false},
+				            restore: {show: true},
+				            saveAsImage: {show: true}
+				        }
 				    },
 				    legend: {
-				    	
-				        left: 'left',
-				        data: []
+				        
 				    },
-				    series : [
+				    xAxis: [
+				        {
+				            type: 'category',
+				            axisTick: {
+				                alignWithLabel: true
+				            },
+				            data: []
+				        }
+				    ],
+				    yAxis: [
+				        {
+				        	lineStyle: {
+			                    color: colors[0]
+			                }
+				           
+				        },
 				        {
 				            
-				            type: 'pie',
-				            radius : '45%',
-				            center: ['53%', '50%'],
-				            data:[
-				                
-				            ],
-				            itemStyle: {
-				                emphasis: {
-				                    shadowBlur: 10,
-				                    shadowOffsetX: 0,
-				                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+				          
+				        	lineStyle: {
+			                    color: colors[1]
+			                }
+				            
+				            
+				        },
+				        {
+				        	 lineStyle: {
+				                    color: colors[2]
 				                }
-				            }
-				         
+				        }
+				    ],
+				    series: [
+				        {
+				            name:'男',
+				            type:'bar',
+				            data:[]
+				        },
+				        {
+				            name:'女',
+				            type:'bar',
+				            
+				            data:[]
+				        },
+				        {
+				            name:'总数',
+				            type:'line',
+				            yAxisIndex: 2,
+				            data:[]
 				        }
 				    ]
+				
+
 					 
 			 });
-
-
 			
 			 // 异步加载数据
-			 $.get('../student/getCollegeUserNum.do').done(function (data) {
-				 var name=[];
-				 var keys=[]
+			 $.get('../student/getCollegeUserSexRatio.do').done(function (data) {
+				 var education=[];
+				 var male=[]
+				 var female=[]
+				 var total=[]
 				 
 				 
 				for(var k in data){
 					let d  = data[k]
-					name.push(d['name'])
-					keys.push(d['value'])
+					education.push(d['education'])
+					male.push(d['male'])
+					female.push(d['female'])
+					total.push(d['total'])
 				}
 				
 			     // 填入数据
-			     myChart1.setOption({
+			     myChart.setOption({
 			         xAxis: {
-			             data: name,
+			             data: education,
 			             axisLabel:{  
 	                         interval:0,//横轴信息全部显示  
 	                         rotate:-20,//-30度角倾斜显示  
@@ -174,28 +191,24 @@
 					    	y2:140
 					    },
 			         series: [{
-			             // 根据名字对应到相应的系列
-			             name: '人数',
-			             data: keys
-			         }]
+			             
+			             name: '男',
+			             data: male
+			         },
+			         {
+			        	 name: '女',
+			             data: female
+			         },
+			         {
+			        	 name: '总数',
+			             data: total
+			         }
+			      ]
 			     });
 			 
-             // 填入数据
-		     myChart2.setOption({
-		    	 legend: {
-				        
-				        //data: name
-				    },
-		         
-		         series: [{
-		             // 根据名字对应到相应的系列
-		             name: '',
-		             data: data
-		         }]
-		     });
-             
+            
 		});
-		echarts.connect([myChart1,myChart2]);
+		
 
    }
     

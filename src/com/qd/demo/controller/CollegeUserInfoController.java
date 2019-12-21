@@ -26,13 +26,14 @@ public class CollegeUserInfoController {
 	}
 
 	
-	//知乎的高校用户人数
+	//知乎的高校男女用户人数
 	@RequestMapping("/getCollegeUserSexRatio")
 	@ResponseBody
 	public List<Map > getCollegeUserSexRatio(){
 					
 		return collegeStudentsUserInfoService.getCollegeUserSexRatio();
 	}
+
 	
 
 }
