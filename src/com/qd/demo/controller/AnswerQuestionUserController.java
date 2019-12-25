@@ -22,7 +22,8 @@ public class AnswerQuestionUserController {
 	@ResponseBody
 	public List<Map > chart_1_data(){
 		
-			return userService.getAnswerQuestionNumUser();
+		 System.out.println(userService.getAnswerQuestionNumUser());
+		 return userService.getAnswerQuestionNumUser();
 	}
 	
 
@@ -39,7 +40,7 @@ public class AnswerQuestionUserController {
 		@RequestMapping("/getUserJobLocation2_2")
 		@ResponseBody
 		public List<Map > getUserJobLocation2_2(){
-			System.out.println(userService.getUserJobLocation());
+			System.out.println(userService.getUserJobLocation2_2());
 			
 			return userService.getUserJobLocation2_2();
 		}

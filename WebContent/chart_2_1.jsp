@@ -61,8 +61,8 @@
           <div class="container-fluid">
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
             <div>
-                <li  class="active" style="list-style: none; display: inline-block;margin-right: 60px;"><a href="../page/chart_2.do" style="text-decoration: none;"> <i class="fa fa-bar-chart" ></i>柱状图 </a></li>
-                <li style="list-style: none;display: inline-block;margin-right: 60px;"><a href="./chart_2_2.do" style="text-decoration: none;"> <i class="fa fa-bar-chart"></i>饼图</a></li>
+              <!--  <li  class="active" style="list-style: none; display: inline-block;margin-right: 60px;"><a href="../page/chart_2.do" style="text-decoration: none;"> <i class="fa fa-bar-chart" ></i>柱状图 </a></li>
+              -->   <li style="list-style: none;display: inline-block;margin-right: 60px;"><a href="./chart_2_2.do" style="text-decoration: none;"> <i class="fa fa-bar-chart"></i>饼图</a></li>
                 <li style="list-style: none;display: inline-block;margin-right: 60px;"><a href="./chart_2_3.do" style="text-decoration: none;"> <i class="fa fa-bar-chart"></i>热力图</a></li>
           		
             </div>

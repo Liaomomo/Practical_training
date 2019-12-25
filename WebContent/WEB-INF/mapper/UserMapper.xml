@@ -8,7 +8,7 @@
 </select>
 
 <select id="getAnswerQuestionNumUser" resultType="java.util.HashMap" >
-
+    select user_name as name,answers_num as value from answers_mostusers ORDER BY value
 </select>
 
 <select id="getUserJobLocation" resultType="java.util.HashMap" >

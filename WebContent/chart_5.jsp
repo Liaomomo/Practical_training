@@ -93,7 +93,7 @@
 					 show:true
 					 },
 					 legend:{
-					 data:['登录人数']
+					 
 					 },
 					 xAxis:[{
 					 type:'category',
@@ -104,7 +104,7 @@
 
 					 }],
 					 series:[{
-					 'name':'登录人数',
+					 
 					 'type':'bar',
 					 'data':[]//数量
 					 }]
@@ -175,7 +175,7 @@
 					    },
 			         series: [{
 			             // 根据名字对应到相应的系列
-			             name: '人数',
+			             
 			             data: keys
 			         }]
 			     });

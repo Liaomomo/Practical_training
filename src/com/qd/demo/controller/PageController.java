@@ -11,9 +11,18 @@ public class PageController {
 	
 	//
 	@RequestMapping("/chart_0")
-	public ModelAndView getindex(){
+	public ModelAndView getchart_0(){
 		
 		ModelAndView mv = new ModelAndView("/chart_0.jsp");
+		return mv;
+		
+	}
+	
+	//
+	@RequestMapping("/chart_0_1")
+	public ModelAndView getchart_0_1(){
+		
+		ModelAndView mv = new ModelAndView("/chart_0_1.jsp");
 		return mv;
 		
 	}

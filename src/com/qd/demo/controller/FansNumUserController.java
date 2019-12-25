@@ -24,12 +24,11 @@ public class FansNumUserController {
 	//getMostFansNumUser
 	@RequestMapping("/getMostFansNumUser")
 	@ResponseBody
-	public List<Map > chart_0_data(){
-		
+	public List<Map > getMostFansNumUser(){
 		List<Map> list = fansNumUserService.getMostFansNumUser();
 		
-		System.out.println(list);
-	
+		//System.out.println(list);
+		
 		return list;
 	}
 

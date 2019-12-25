@@ -9,5 +9,5 @@ public interface FansNumUserMapper {
 
 	
 	List<Map> getMostFansNumUser();
-
+	
 }

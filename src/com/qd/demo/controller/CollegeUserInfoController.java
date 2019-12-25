@@ -33,7 +33,7 @@ public class CollegeUserInfoController {
 					
 		return collegeStudentsUserInfoService.getCollegeUserSexRatio();
 	}
-
+	
 	
 
 }
