@@ -27,4 +27,8 @@ select count(*) as value,locaton as name from user_all where locaton != 'NULL'  
 <select id="getDiePowderUser" resultType="java.util.HashMap" >
 
 </select>
+<select id="getUserInfo" resultType="java.util.HashMap" parameterType="String">
+      select * from user_all where username=#{username} 
+</select>
+
 </mapper>

@@ -20,6 +20,8 @@ public interface UserService {
 
 	public List<Map> getUserlocationMap();
 	
+	public List<Map> getUserInfo(String username);
+	
 	
 
 

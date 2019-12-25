@@ -40,4 +40,9 @@ public class UserServiceImpl implements UserService {
 			// TODO Auto-generated method stub
 			return userMapper.getUserlocationMap();
 		}
+
+		public List<Map> getUserInfo(String username) {
+			// TODO Auto-generated method stub
+			return userMapper.getUserInfo(username);
+		}
 }

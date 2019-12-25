@@ -128,6 +128,14 @@ public class PageController {
 					
 		}	
 		
+		
+		@RequestMapping("/yonghu")
+		public ModelAndView getyonghu(){
+				
+			ModelAndView model = new ModelAndView("/yonghu.jsp");
+			return model;
+					
+		}	
     
 		
 	

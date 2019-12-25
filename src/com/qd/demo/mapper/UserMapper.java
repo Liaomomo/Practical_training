@@ -21,5 +21,7 @@ public List<Map> getUserJobLocation2_2();
 
 public List<Map> getUserlocationMap();
 
+public List<Map> getUserInfo(String username);
+
 }
 

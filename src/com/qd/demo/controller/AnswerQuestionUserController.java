@@ -63,5 +63,12 @@ public class AnswerQuestionUserController {
 				
 			return userService.getDiePowderUser();
 	}
+	
+	@RequestMapping("/getUserInfo")
+	@ResponseBody
+	public List getUserInfo(String username){
+				System.out.println(username);
+			return userService.getUserInfo(username);
+	}
 
 }

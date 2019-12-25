@@ -31,6 +31,25 @@
               </a>
 
           </div>
+          
+          <div class="header">
+               <a href="../page/chart_0.do" class="navbar-brand">
+              <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">数据分析</strong></div>
+              </a>
+
+          </div>
+          
+          
+          <div class="header">
+               <a href="../page/yonghu.do" class="navbar-brand">
+              <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">用户查询</strong></div>
+              </a>
+
+          </div>
+          
+          
+          
+          
           <div class="right-menu list-inline no-margin-bottom">    
            
             <div ><a><img src="../static/img/flags/16/CN.png" alt="English"><span class="d-none d-sm-inline-block">中文</span></a>
