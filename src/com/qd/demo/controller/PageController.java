@@ -136,7 +136,13 @@ public class PageController {
 			return model;
 					
 		}	
-    
+		@RequestMapping("/yonghu_0")
+		public ModelAndView getyonghu_0(){
+				
+			ModelAndView model = new ModelAndView("/yonghu_0.jsp");
+			return model;
+					
+		}	
 		
 	
 

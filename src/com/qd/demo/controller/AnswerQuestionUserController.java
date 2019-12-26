@@ -66,9 +66,15 @@ public class AnswerQuestionUserController {
 	
 	@RequestMapping("/getUserInfo")
 	@ResponseBody
-	public List getUserInfo(String username){
-				System.out.println(username);
-			return userService.getUserInfo(username);
+	public ModelAndView getUserInfo(String username){
+		  
+			List list = userService.getUserInfo(username);
+			System.out.print(list);
+			ModelAndView model = new ModelAndView("../yonghu_0.jsp");
+			model.addObject("list", list);
+			
+			return model;
 	}
+
 
 }
