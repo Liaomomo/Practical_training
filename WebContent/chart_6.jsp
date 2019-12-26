@@ -96,10 +96,12 @@
    {
 	  
 	   var myChart = echarts.init(document.getElementById('echarts'));
+	   myChart.showLoading();
 	   // 显示标题，图例和空的坐标轴
 	   var maskImage = new Image();
 	   var createRandomItemStyle2 = function () {
-		    var colorArr = ['#fda67e', '#81cacc', '#cca8ba', "#88cc81", "#82a0c5", '#fddb7e', '#735ba1', '#bda29a', '#6e7074', '#546570', '#c4ccd3'];
+		    var colorArr = ['#fda67e', '#81cacc', '#cca8ba', "#88cc81", "#82a0c5", '#fddb7e', '#735ba1','#00FFFF','#ADFF2F','#ADFF2F','#EE82EE','#FFA500','#FFB6C1',
+		                    '#228B22','#FF69B4','#F0E68C','#87CEFA','#FFE4E1'];
 		    var flag = parseInt(Math.random() * 10);
 		    return {
 		        normal: {
@@ -116,7 +118,7 @@
 			            text: '粉丝大V',
 			            backgroundColor:'rgb(255,255,255,0)'
 			        },
-			      //  backgroundColor:'#fff',
+			        backgroundColor:'#fff',
 			        tooltip: {
                         show: false
                     },
@@ -130,12 +132,12 @@
                             normal: {
                                 fontFamily: '微软雅黑',
                                 
-                                color: function() {
-                                    return 'rgb(' +
-                                        Math.round(Math.random() * 255) +
-                                        ', ' + Math.round(Math.random() * 255) +
-                                        ', ' + Math.round(Math.random() * 255) + ')'
-                                }
+                                color: function (params) { 
+   				                 
+
+   				                 //随机显示
+   				                 return "#"+Math.floor(Math.random()*(256*256*256-1)).toString(16);
+   				             },
                             },
                             emphasis: {
                                 shadowBlur: 10,
@@ -145,7 +147,7 @@
                             
                         },
                         
-                        textStyle:createRandomItemStyle2(),
+                        //textStyle:createRandomItemStyle2(),
                         left: 'center',
                         top: 'center',
                         // width: '96%',
@@ -169,6 +171,7 @@
 			            }]
 			        });
 			    });
+			    myChart.hideLoading();
 			    //myChart.resize();
    }
     

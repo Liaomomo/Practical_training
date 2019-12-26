@@ -85,6 +85,7 @@
    {
 	  
 	   var myChart = echarts.init(document.getElementById('echarts'));
+	   myChart.showLoading();
 	     // 显示标题，图例和空的坐标轴
 			/*  myChart.setOption({
 			     title: {
@@ -129,6 +130,7 @@
 			         }]
 			     });
 			 }); */
+	   myChart.hideLoading();
 
    }
     

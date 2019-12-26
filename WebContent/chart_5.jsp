@@ -83,6 +83,7 @@
    {
 	  
 	   var myChart1 = echarts.init(document.getElementById('echarts'));
+	   myChart1.showLoading();
 	     // 显示标题，图例和空的坐标轴
 			 myChart1.setOption({
 				 title : {
@@ -106,7 +107,18 @@
 					 series:[{
 					 
 					 'type':'bar',
-					 'data':[]//数量
+					 'data':[],//数量
+					 itemStyle: {
+				    	 normal:{
+				    		 color: function (params) { 
+				                 
+
+				                 //随机显示
+				                 return "#"+Math.floor(Math.random()*(256*256*256-1)).toString(16);
+				             },
+			 
+				    	 }
+				     },
 					 }]
 					 
 			 });
@@ -139,6 +151,8 @@
 				                    shadowOffsetX: 0,
 				                    shadowColor: 'rgba(0, 0, 0, 0.5)'
 				                }
+				                
+				       
 				            }
 				         
 				        }
@@ -196,6 +210,7 @@
              
 		});
 		echarts.connect([myChart1,myChart2]);
+		 myChart1.hideLoading();
 
    }
     

@@ -95,12 +95,13 @@
     
    function initEcharts()
    {
-	  
+	   
 	   var myChart = echarts.init(document.getElementById('echarts'));
 	   // 显示标题，图例和空的坐标轴
 	   var maskImage = new Image();
+	   myChart.showLoading();
 	   var createRandomItemStyle2 = function () {
-		    var colorArr = ['#fda67e', '#81cacc', '#cca8ba', "#88cc81", "#82a0c5", '#fddb7e', '#735ba1', '#bda29a', '#6e7074', '#546570', '#c4ccd3'];
+		    var colorArr = ['#fda67e', '#81cacc', '#cca8ba', "#88cc81", "#82a0c5", '#fddb7e', '#735ba1','#00FFFF','#ADFF2F','#ADFF2F','#EE82EE','#FFA500','#FFB6C1','#FF8C00','#483D8B','#9400d3','#FF1493'];
 		    var flag = parseInt(Math.random() * 10);
 		    return {
 		        normal: {
@@ -122,7 +123,7 @@
 			            text: '粉丝大V',
 			            backgroundColor:'rgb(255,255,255,0)'
 			        },
-			        //backgroundColor:'#fff',
+			        backgroundColor:'#fff',
 			        tooltip: {
                         show: false
                     },
@@ -136,20 +137,12 @@
                             normal: {
                                 fontFamily: '微软雅黑',
                                 
-                                color: function () {
-                        		    var colorArr = ['#fda67e', '#81cacc', '#cca8ba', "#88cc81", "#82a0c5", '#fddb7e', '#735ba1', '#bda29a', '#6e7074', '#546570', '#c4ccd3'];
-                        		    var flag = parseInt(Math.random() * 10);
-                        		    return {
-                        		         normal: {
-                        		            fontFamily: '微软雅黑',
-                        		            color:function (params) {　　　　//此方法与下方配置中的第一个textStle下的color等同
-                        		    		    var colors = ['#fda67e', '#81cacc', '#cca8ba', "#88cc81", "#82a0c5", '#fddb7e', '#735ba1', '#bda29a', '#6e7074', '#546570', '#c4ccd3'];
-                        		    		    return colors[parseInt(Math.random() * 10)];
-                        		    		}
- 
-                        		        }
-                        		    };
-                        		}
+                                color: function (params) { 
+   				                 
+
+   				                 //随机显示
+   				                 return "#"+Math.floor(Math.random()*(256*256*256-1)).toString(16);
+   				             
                             },
                             emphasis: {
                                 shadowBlur: 10,
@@ -158,8 +151,11 @@
 
                             
                         },
+
+                            
+                        },
                         
-                        textStyle:createRandomItemStyle2(),
+                        //textStyle:createRandomItemStyle2(),
                         left: 'center',
                         top: 'center',
                         // width: '96%',
@@ -183,6 +179,7 @@
 			            }]
 			        });
 			    });
+			    myChart.hideLoading(); 
 			    //myChart.resize();
    }
     

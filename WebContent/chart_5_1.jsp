@@ -82,7 +82,8 @@
    {
 	  
 	   var myChart = echarts.init(document.getElementById('echarts'));
-	   var colors = ['#5793f3', '#d14a61', '#675bba'];
+	   myChart.showLoading();
+	   var colors = ['#5793f3', '#00BFFF', '#675bba'];
 	     // 显示标题，图例和空的坐标轴
 			 myChart.setOption({
 				 color: colors,
@@ -208,7 +209,8 @@
 			 
             
 		});
-		
+			 
+	    myChart.hideLoading();
 
    }
     

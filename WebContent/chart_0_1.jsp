@@ -106,6 +106,7 @@
 			         data:[]
 			     },
 			     backgroundColor:'#fff',
+			     
 			     xAxis: {
 			         data: []
 			     },
@@ -113,6 +114,11 @@
 			     series: [{
 			         name: '',
 			         type: 'bar',
+			         itemStyle: {
+				    	 normal:{
+				    		 color:'#00BFFF'
+				    	 }
+				     },
 			         data: []
 			     }],
 			      dataZoom: [{

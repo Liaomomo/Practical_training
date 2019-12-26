@@ -85,6 +85,7 @@
    {
 	  
 	   var myChart = echarts.init(document.getElementById('echarts'));
+	   myChart.showLoading();
 	     // 显示标题，图例和空的坐标轴
 			 myChart.setOption({
 			     title: {
@@ -101,6 +102,16 @@
 			     series: [{
 			         name: '人数',
 			         type: 'bar',
+			         itemStyle: {
+				    	 normal:{
+				    		 color: function (params) { 
+				                 
+
+				                 //随机显示
+				                 return "#"+Math.floor(Math.random()*(256*256*256-1)).toString(16);
+				             },
+				    	 }
+				     },
 			         data: []
 			     }]
 			 });
@@ -129,6 +140,7 @@
 			         }]
 			     });
 			 });
+			 myChart.hideLoading();
 
    }
     
