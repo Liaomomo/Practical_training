@@ -98,71 +98,74 @@
 	   var myChart = echarts.init(document.getElementById('echarts'));
 	   // 显示标题，图例和空的坐标轴
 	   myChart.setOption({
-		   color: ['#3398DB'],
-		    tooltip : {
-		        trigger: 'axis',
-		        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-		            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-		        }
-		    },
-		    grid: {
-		        left: '3%',
-		        right: '4%',
-		        bottom: '3%',
-		        containLabel: true
-		    },
-		    xAxis : [
-		        {
-		            type : 'category',
-		            data : [],
-		            axisTick: {
-		                alignWithLabel: true
-		            }
-		        }
-		    ],
-		    yAxis : [
-		        {
-		            type : 'value'
-		        }
-		    ],
-		    series : [
-		        {
-		            name:'直接访问',
-		            type:'bar',
-		            barWidth: '60%',
-		            data:[]
-		        }
-		    ]
+			     title: {
+			         text: '粉丝大V'
+			     },
+			     tooltip: {},
+			     legend: {
+			         data:[]
+			     },
+			     backgroundColor:'#fff',
+			     xAxis: {
+			         data: []
+			     },
+			     yAxis: {},
+			     series: [{
+			         name: '',
+			         type: 'bar',
+			         data: []
+			     }],
+			      dataZoom: [{
+			    	                               type: 'slider',
+			    	                               show: true, //flase直接隐藏图形
+			    	                               xAxisIndex: [0],
+			    	                               left: '9%', //滚动条靠左侧的百分比
+			    	                               bottom: -5,
+			    	                               start: 0,//滚动条的起始位置
+			    	                               end: 3 //滚动条的截止位置（按比例分割你的柱状图x轴长度）
+			    	                           }] 
+			    	
 			 });
 			
-			
-			// 异步加载数据
-			    $.get('../fans/getMostFansNumUser.do').done(function (data) {
-			        // 填入数据
-			        
-			    	var name=[];
-					 var keys=[]
-					 
-					 
-					for(var k in data){
-						let d  = data[k]
-						name.push(d['name'])
-						keys.push(d['value'])
-					}
-					
-				     // 填入数据
-				     myChart.setOption({
-				         xAxis: {
-				             data: name
-				         },
-				         series: [{
-				             // 根据名字对应到相应的系列
-				             name: '人数',
-				             data: keys
-				         }]
-				     });
-			    });
-			    //myChart.resize();
+			 // 异步加载数据
+			 $.get('../fans/getMostFansNumUser.do').done(function (data) {
+				 var name=[];
+				 var keys=[]
+				 var url=[]
+				 
+				 
+				for(var k in data){
+					let d  = data[k]
+					name.push(d['name'])
+					keys.push(d['value'])
+					url.push(d['url'])
+				}
+				
+			     // 填入数据
+			     myChart.setOption({
+			         xAxis: {
+			             data: name
+			         },
+			         series: [{
+			             // 根据名字对应到相应的系列
+			             name: '',
+			             data: keys
+			         }]
+			     });
+			     myChart.on('click', function (params) {
+			    	    
+			    	    var index = params.dataIndex;
+			    	   
+			    	    //alert(url);
+			    	    //console.log(params); 
+			    	    //console.log(url);
+					    window.open(url[index]);
+					}); 
+			     
+			 });
+			 
+			 //myChart.resize();
+			  
    }
     
 
