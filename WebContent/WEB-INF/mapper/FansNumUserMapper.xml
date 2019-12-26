@@ -4,6 +4,6 @@
 <mapper namespace="com.qd.demo.mapper.FansNumUserMapper">
 
 <select id="getMostFansNumUser" resultType="java.util.HashMap" >
-       select username as name,followers as value from user_all order by followers desc LIMIT 200
+       select username as name,followers as value,url from user_all order by followers desc LIMIT 200
 </select>
 </mapper>

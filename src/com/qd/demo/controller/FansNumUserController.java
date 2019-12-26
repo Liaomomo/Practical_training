@@ -27,7 +27,7 @@ public class FansNumUserController {
 	public List<Map > getMostFansNumUser(){
 		List<Map> list = fansNumUserService.getMostFansNumUser();
 		
-		//System.out.println(list);
+		System.out.println(list);
 		
 		return list;
 	}
