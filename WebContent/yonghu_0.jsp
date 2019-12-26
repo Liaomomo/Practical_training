@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../static/css/style.default.css" id="theme-stylesheet">
     <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/yonghu.css"/>
     <script type="text/javascript" src="../static/js/jquery.min.js"></script>
     <script type="text/javascript" src="../static/js/echarts3.2.3.js"></script>
     <script type="text/javascript" src="../static/js/worldcloud3.2.3.js"></script>
@@ -75,13 +76,42 @@
 <!-- Sidebar Navigation end-侧边栏导航结束-->
       <div class="page-contents" >
         <div class="page-header">
-          <div class="container-fluid">
-            <h2 class="h5 no-margin-bottom">用户信息查询</h2>
-          </div>
-            <form action="../user/getUserInfo.do?username">
-                 <input type="text" name="username">
-                 <input type="submit" value="Submit">
-            </form>
+
+       <article  class="1">
+	    <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
+		    <header class="resume-header pt-4 pt-md-0">
+			    <div class="media flex-column flex-md-row">
+			    <c:forEach  items="${list}" var="s">
+				    <img  text-align="center" src=${ s.avatar_url} alt="" width="200" height="200">
+				    <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
+					    <div class="center">
+					       <div class="title mb-3">用户名：${s.username}</div>
+						    <div class="title mb-3">所处地：${s.locaton}</div>
+						    <ul class="list-unstyled">
+						    	<li><a href="#">职业：${s.employment}</a></li>
+							    <li><a href="#">所处行业：${s.business}</a></li>
+							    <li><a href="#">婚姻状况：${s.sex}</a></li>
+				                <li><a href="#">毕业大学：${s.education}</a></li>
+						    </ul>
+						 </div><!--//primary-info-->
+					</div>
+				</c:forEach>
+			    </div><!--//media-->
+		    </header>
+		    <div class="resume-body p-5">
+			    <section class="resume-section summary-section mb-5">
+				    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Career Summary</h2>
+				    <div class="resume-section-content">
+					    <p class="mb-0">Summarise your career here. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. You can download this free resume/CV template here. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget.</p>
+				    </div>
+			    </section><!--//summary-section-->
+			    
+			   
+		    </div><!--//resume-body-->
+		    
+		    
+	    </div>
+    </article>  
     
     
     </div>

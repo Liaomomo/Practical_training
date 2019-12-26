@@ -83,44 +83,7 @@
                  <input type="submit" value="Submit">
             </form>
     
-    <article class="resume-wrapper text-center position-relative">
-	    <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
-		    <header class="resume-header pt-4 pt-md-0">
-			    <div class="media flex-column flex-md-row">
-				    <img class="mr-3 img-fluid picture mx-auto" src="${avatar_url}" alt="">
-				    <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
-					    <div class="primary-info">
-						    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">用户名：</h1>
-						    <div class="title mb-3">所处地：</div>
-						    <ul class="list-unstyled">
-							    <li><a href="#">所处行业：</a></li>
-							    <li><a href="#">婚姻状况：</a></li>
-						    </ul>
-					    </div><!--//primary-info-->
-					    <div class="secondary-info ml-md-auto mt-2">
-						    <ul class="resume-social list-unstyled">
-				                <li><a href="#">职业：</a></li>
-				                <li><a href="#">毕业大学：</a></li>
-						    </ul>
-					    </div><!--//secondary-info-->
-					    
-				    </div><!--//media-body-->
-			    </div><!--//media-->
-		    </header>
-		    <div class="resume-body p-5">
-			    <section class="resume-section summary-section mb-5">
-				    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Career Summary</h2>
-				    <div class="resume-section-content">
-					    <p class="mb-0">Summarise your career here. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. You can download this free resume/CV template here. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget.</p>
-				    </div>
-			    </section><!--//summary-section-->
-			    
-			   
-		    </div><!--//resume-body-->
-		    
-		    
-	    </div>
-    </article>  
+
     
     
     </div>
