@@ -84,7 +84,7 @@
 			    <c:forEach  items="${list}" var="s">
 				    <img  text-align="center" src=${ s.avatar_url} alt="" width="200" height="200">
 				    <div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
-					    <div class="center">
+					    <div class="center">	
 					       <div class="title mb-3">用户名：${s.username}</div>
 						    <div class="title mb-3">所处地：${s.locaton}</div>
 						    <ul class="list-unstyled">
