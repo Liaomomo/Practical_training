@@ -33,20 +33,7 @@
 
           </div>
           
-          <div class="header">
-               <a href="../page/chart_0.do" class="navbar-brand">
-              <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">数据分析</strong></div>
-              </a>
-
-          </div>
           
-          
-          <div class="header">
-               <a href="../page/yonghu.do" class="navbar-brand">
-              <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">用户查询</strong></div>
-              </a>
-
-          </div>
           
           
           
@@ -67,10 +54,20 @@
       <nav id="sidebar">
 
         
-        <span class="heading">用户信息</span>
+        <span class="heading">数据分析</span>
         <ul class="list-unstyled">
-          <li class="active"><a href="../page/chart_0.do" > <i class="icon-home"></i >用户登陆 </a></li>
+          <li class="active"><a href="../page/chart_0.do" > <i class="icon-home"></i >粉丝大V </a></li>
+          <li  ><a href="../page/chart_1.do"> <i class="fa fa-bar-chart"></i>最佳活跃人 </a></li>
+          <li><a href="../page/chart_2.do"> <i class="fa fa-bar-chart"></i>知乎职业分布</a></li>
+          <li><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>最热话题 </a></li>
+          <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>知乎僵尸粉 </a></li>
+          <li><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>高校用户分布 </a></li>
+          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>用户兴趣画像 </a></li>
+          <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>PageRank用户排行 </a></li>
           </ul>
+          <span class="heading">用户查询</span>
+        <ul class="list-unstyled">
+          <li> <a href="../page/yonghu.do"> <i class="icon-settings"></i>用户信息</a></li>
 
       </nav>
 <!-- Sidebar Navigation end-侧边栏导航结束-->
