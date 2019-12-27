@@ -48,9 +48,9 @@
           <li><a href="../page/chart_1.do"> <i class="fa fa-bar-chart"></i>最佳活跃人 </a></li>
           <li><a href="../page/chart_2.do"> <i class="fa fa-bar-chart"></i>知乎职业分布</a></li>
           <li class="active"><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>最热话题 </a></li>
-          <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>知乎僵尸粉 </a></li>
+      <!--     <li><a href="../page/chart_4.do"> <i class="fa fa-bar-chart"></i>知乎僵尸粉 </a></li> -->
           <li><a href="../page/chart_5.do"> <i class="fa fa-bar-chart"></i>高校用户分布 </a></li>
-          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>用户兴趣画像 </a></li>
+          <li><a href="../page/chart_6.do"> <i class="fa fa-bar-chart"></i>知乎兴趣分析</a></li>
           <li><a href="../page/chart_7.do"> <i class="fa fa-bar-chart"></i>PageRank用户排行 </a></li>
            </ul>
           <span class="heading">用户查询</span>
