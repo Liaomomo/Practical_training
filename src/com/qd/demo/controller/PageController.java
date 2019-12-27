@@ -142,7 +142,22 @@ public class PageController {
 			ModelAndView model = new ModelAndView("/yonghu_0.jsp");
 			return model;
 					
-		}	
+		}
+		
+		@RequestMapping("/relation")
+		public ModelAndView relation(){
+				
+			ModelAndView model = new ModelAndView("/relation.jsp");
+			return model;
+					
+		}
+		@RequestMapping("/index")
+		public ModelAndView index(){
+				
+			ModelAndView model = new ModelAndView("/index.jsp");
+			return model;
+					
+		}
 		
 	
 

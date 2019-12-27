@@ -72,6 +72,9 @@ public class AnswerQuestionUserController {
 			System.out.print(list);
 			ModelAndView model = new ModelAndView("../yonghu_0.jsp");
 			model.addObject("list", list);
+			if(list.isEmpty()){
+				return null;
+			}
 			
 			return model;
 	}

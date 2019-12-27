@@ -54,7 +54,9 @@
         
         <span class="heading">数据分析</span>
         <ul class="list-unstyled">
+          <li><a href="../page/index.do"> <i class="fa fa-bar-chart"></i>首页 </a></li>
           <li class="active"><a href="../page/chart_0.do" > <i class="icon-home"></i >粉丝大V </a></li>
+          <li  ><a href="../page/relation.do"> <i class="fa fa-bar-chart"></i>知乎大V交际圈 </a></li>
           <li  ><a href="../page/chart_1.do"> <i class="fa fa-bar-chart"></i>最佳活跃人 </a></li>
           <li><a href="../page/chart_2.do"> <i class="fa fa-bar-chart"></i>知乎职业分布</a></li>
           <li><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>最热话题 </a></li>
@@ -136,7 +138,7 @@
                     series: [{
                         type: 'wordCloud',
                         gridSize: 5,
-                        sizeRange: [10, 60],
+                        sizeRange: [10, 50],
                         rotationRange: [-45, 0, 45, 90],
                         maskImage: maskImage,
                         textStyle: {
@@ -173,18 +175,28 @@
                     
                    
 			 });
-            
-			
+        /*$.ajax({
+           type:'GET',
+           url:'http://172.19.136.174:8888/api/zhihu/data',
+           data:{token:'alexandeng'},
+           success:function(result){
+        	   console.log(result);
+           }
+       });
+        */
+			//   ../fans/getMostFansNumUser.do
 			// 异步加载数据
+			
 			    $.get('../fans/getMostFansNumUser.do').done(function (data) {
 			        // 填入数据
-			        
+			       
 			        myChart.setOption({
 			            series: [{
-			                data: data
+			                data:data
 			            }]
 			        });
-			    });
+			    }); 
+			
 			    myChart.hideLoading(); 
 			
 			    //myChart.resize();

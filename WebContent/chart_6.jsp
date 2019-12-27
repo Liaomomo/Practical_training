@@ -49,7 +49,9 @@
         
         <span class="heading">数据分析</span>
         <ul class="list-unstyled">
+        <li><a href="../page/index.do"> <i class="fa fa-bar-chart"></i>首页 </a></li>
           <li ><a href="../page/chart_0.do" > <i class="icon-home"></i >粉丝大V </a></li>
+          <li  ><a href="../page/relation.do"> <i class="fa fa-bar-chart"></i>知乎大V交际圈 </a></li>
           <li  ><a href="../page/chart_1.do"> <i class="fa fa-bar-chart"></i>最佳活跃人 </a></li>
           <li><a href="../page/chart_2.do"> <i class="fa fa-bar-chart"></i>知乎职业分布</a></li>
           <li><a href="../page/chart_3.do"> <i class="fa fa-bar-chart"></i>最热话题 </a></li>

@@ -28,7 +28,7 @@ select count(*) as value,locaton as name from user_all where locaton != 'NULL'  
 
 </select>
 <select id="getUserInfo" resultType="java.util.HashMap" parameterType="String">
-      select * from user_all where username=#{username} 
+      select * from user_all where username=#{username} limit 1
 </select>
 
 </mapper>
