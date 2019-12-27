@@ -18,14 +18,14 @@
     <script src="../static/js/echarts.js"></script>
     <script src="http://api.map.baidu.com/api?v=2.0&ak=sSFPImjk2jCz5Ctf84s3BdTUdi6NCIwq"></script>
     <script type="text/javascript" src="//api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
-    <style type="text/css">
+    <!-- <style type="text/css">
             <style type="text/css">
 		ul,li{list-style: none;margin:0;padding:0;float:left;}
 		html{height:80%}
 		body{height:80%;margin:10px;padding:0px;font-family:"微软雅黑";}
 		#container{height:520px;width:90%; margin-left:80px;margin-top:20px;margin-bottom:20px;}
 		/* #r-result{width:100%;} */
-    </style>
+    </style> -->
   </head>
   <body>
     <header class="header">   
@@ -75,7 +75,9 @@
                 <li style="list-style: none;display: inline-block;margin-right: 60px;"><a href="./chart_2_2.do" style="text-decoration: none;"> <i class="fa fa-bar-chart"></i>饼图</a></li>
             </div>
           </div>
-          <div id="container"></div>
+          <div class="container-charts"  id="echarts" style="background: white;">
+              
+           </div>
 	<!-- <div id="r-result">
 		<input type="button"  onclick="openHeatmap();" value="显示热力图"/>
 		<input type="button"  onclick="closeHeatmap();" value="关闭热力图"/>
@@ -86,8 +88,8 @@
        </div>
     
    <script type="text/javascript">
-  var map = new BMap.Map("container",{minZoom:5,maxZoom:8}); // 创建Map实例,设置地图允许的最小/大级别
-	map.centerAndZoom(new BMap.Point(116.435,39.815),5); // 初始化地图，设置中心点坐标和地图级别
+  var map = new BMap.Map("echarts",{minZoom:5,maxZoom:8}); // 创建Map实例,设置地图允许的最小/大级别
+	map.centerAndZoom(new BMap.Point(116.30,34.10000),5); // 初始化地图，设置中心点坐标和地图级别
 	map.enableScrollWheelZoom(true);// 允许滚轮缩放
 	
 	 $.get('../user/getUserlocationMap.do').done(function (data) {

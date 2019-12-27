@@ -129,8 +129,8 @@
                     },
                     series: [{
                         type: 'wordCloud',
-                        gridSize: 1,
-                        sizeRange: [12, 55],
+                        gridSize: 5,
+                        sizeRange: [20, 55],
                         rotationRange: [-45, 0, 45, 90],
                         maskImage: maskImage,
                         textStyle: {

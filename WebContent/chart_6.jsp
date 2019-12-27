@@ -67,7 +67,7 @@
             <h2 class="h5 no-margin-bottom">知乎数据分析</h2>
           </div>
             <div>
-            <li  class="active" style="list-style: none; display: inline-block;margin-right: 60px;"><a href="../page/chart_0.do" style="text-decoration: none;"> <i class="fa fa-bar-chart" style="padding-left: 15px;"></i>词云 </a></li>
+            <li  class="active" style="list-style: none; display: inline-block;margin-right: 60px;"><a href="../page/chart_6.do" style="text-decoration: none;"> <i class="fa fa-bar-chart" style="padding-left: 15px;"></i>词云 </a></li>
                 
            </div>
            <div class="container-charts"  id="echarts" style="background: rgb(255,255,255);">
