@@ -66,17 +66,17 @@ public class AnswerQuestionUserController {
 	
 	@RequestMapping("/getUserInfo")
 	@ResponseBody
-	public ModelAndView getUserInfo(String username){
+	public List getUserInfo(String username){
 		  
 			List list = userService.getUserInfo(username);
-			System.out.print(list);
-			ModelAndView model = new ModelAndView("../yonghu_0.jsp");
+			/*System.out.print(list);
+			ModelAndView model = new ModelAndView("../yonghu.jsp");
 			model.addObject("list", list);
 			if(list.isEmpty()){
 				return null;
-			}
+			}*/
 			
-			return model;
+			return list;
 	}
 
 

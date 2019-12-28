@@ -119,31 +119,38 @@ public class PageController {
 			return model;
 			
 	}
-	//chart_2_3
-		@RequestMapping("/chart_2_3")
-		public ModelAndView getchart_2_3(){
+	//chart_5_2
+		@RequestMapping("/chart_5_2")
+		public ModelAndView getchart_5_2(){
 				
-			ModelAndView model = new ModelAndView("/chart_2_3.jsp");
+			ModelAndView model = new ModelAndView("/chart_5_2.jsp");
 			return model;
 					
 		}	
 		
-		
+/*		
 		@RequestMapping("/yonghu")
 		public ModelAndView getyonghu(){
 				
 			ModelAndView model = new ModelAndView("/yonghu.jsp");
 			return model;
 					
-		}	
-		@RequestMapping("/yonghu_0")
-		public ModelAndView getyonghu_0(){
+		}	*/
+		@RequestMapping("/yonghu")
+		public ModelAndView getyonghu(){
 				
-			ModelAndView model = new ModelAndView("/yonghu_0.jsp");
+			ModelAndView model = new ModelAndView("/yonghu.jsp");
 			return model;
 					
 		}
 		
+		@RequestMapping("/relation_graphy")
+		public ModelAndView relation_graphy(){
+				
+			ModelAndView model = new ModelAndView("/relation_graphy.jsp");
+			return model;
+					
+		}
 		@RequestMapping("/relation")
 		public ModelAndView relation(){
 				
