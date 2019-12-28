@@ -75,8 +75,8 @@
             
             </div>
           </div >
-           <div class="container-charts"  id="echarts" style="background: white;display: inline-block;white;width: 600px;height:500px;"></div>
-           <div class="container-charts"  id="echarts2" style="background: white;display: inline-block;white;width: 330px;height:500px;"></div>
+           <div class="container-charts"  id="echarts" style="background: white;display: inline-block;white;width: 66%;height:500px;"></div>
+           <div class="container-charts"  id="echarts2" style="background: white;display: inline-block;white;width: 66%;height:500px;"></div>
         </div>
         
       </div>
